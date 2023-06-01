@@ -1,12 +1,23 @@
 @font-face {
   font-family: "Avenir";
-  src: local("Avenir");
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format(OpenType);
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format(OpenType);
   src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format(OpenType);
   src: url("../../assets/fonts/Alternative/AvenirNextLTPro.ttf") format(truetype);
-  src: url("../../assets/fonts/Alternative/AvenirNextLTProBold.ttf") format(truetype);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format(OpenType);
   src: url("../../assets/fonts/Alternative/AvenirNextLTProDemi.ttf") format(truetype);
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format(OpenType);
+  src: url("../../assets/fonts/Alternative/AvenirNextLTProBold.ttf") format(truetype);
+  font-weight: 900;
+  font-style: normal;
 }
 * {
   margin: 0;
@@ -23,6 +34,7 @@ html {
 body {
   font-family: "Avenir";
   font-size: 1.6rem;
+  font-weight: 300;
   transition: all 0.5s 0.5s ease-in-out;
   color: #323232;
 }
@@ -36,10 +48,10 @@ a {
 }
 
 .container {
-  /* 1280px */
   max-width: 128rem;
   margin: 0 auto;
   padding: 0 3.2rem;
+  background-color: #323232;
 }
 @media screen and (min-width: 768px) {
   .container {

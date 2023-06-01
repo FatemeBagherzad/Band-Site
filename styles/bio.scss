@@ -18,6 +18,7 @@ html {
 body {
   font-family: "Avenir";
   font-size: 1.6rem;
+  font-weight: 300;
   transition: all 0.5s 0.5s ease-in-out;
   color: $Black;
 }
@@ -29,10 +30,10 @@ a {
   padding: 0;
 }
 .container {
-  /* 1280px */
   max-width: 128rem;
   margin: 0 auto;
   padding: 0 3.2rem;
+  background-color: $Black;
   @include tablet {
     padding: 0 5rem;
   }
@@ -44,3 +45,31 @@ hr {
 //********************
 //header
 //********************
+.header {
+  color: $Alabaster;
+  display: grid;
+  grid-template-areas: "logo" "menu";
+  justify-items: center;
+  padding: 1rem 0;
+  gap: 2rem;
+  &__logo {
+    grid-area: logo;
+    font-size: 6rem;
+    font-weight: 300;
+  }
+  &__menu {
+    color: $Mercury;
+    grid-area: menu;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    justify-items: center;
+    font-size: 3.6rem;
+    &--item:hover {
+      border-bottom: 1px solid $white;
+      color: $white;
+      font-weight: 600;
+    }
+  }
+}
