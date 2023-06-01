@@ -70,7 +70,6 @@ hr {
   display: grid;
   grid-template-areas: "logo" "menu";
   justify-items: center;
-  gap: 2rem;
   @include tablet {
     grid-template-areas: "logo menu menu menu";
     justify-items: flex-start;
@@ -133,7 +132,6 @@ hr {
   font-weight: 600;
   display: flex;
   align-items: center;
-  padding-left: 2rem;
 }
 
 //********************
@@ -160,6 +158,7 @@ hr {
       "imgcaption imgcaption"
       "header3 header3"
       "introColumn1 introColumn2";
+    padding: 0 10rem;
   }
   &__header2 {
     grid-area: header2;
@@ -168,7 +167,7 @@ hr {
     padding: 4.2rem 0 1.6rem 0;
     color: $Black;
     @include tablet {
-      margin-left: -4rem;
+      margin-left: -6rem;
     }
   }
   &__img {
@@ -252,6 +251,7 @@ hr {
     "copyRight";
   align-items: center;
   color: $White;
+  padding: 3rem 0;
   @include tablet {
     grid-template-areas:
       "getInTouch getInTouch logo"

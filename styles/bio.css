@@ -93,7 +93,6 @@ hr {
   display: grid;
   grid-template-areas: "logo" "menu";
   justify-items: center;
-  gap: 2rem;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -156,7 +155,6 @@ hr {
   font-weight: 600;
   display: flex;
   align-items: center;
-  padding-left: 2rem;
 }
 
 .BackgroundAbout {
@@ -172,6 +170,7 @@ hr {
 @media screen and (min-width: 768px) {
   .aboutMusicion {
     grid-template-areas: "header2 header2" "image image" "imgcaption imgcaption" "header3 header3" "introColumn1 introColumn2";
+    padding: 0 10rem;
   }
 }
 .aboutMusicion__header2 {
@@ -183,7 +182,7 @@ hr {
 }
 @media screen and (min-width: 768px) {
   .aboutMusicion__header2 {
-    margin-left: -4rem;
+    margin-left: -6rem;
   }
 }
 .aboutMusicion__img {
@@ -257,6 +256,7 @@ hr {
   grid-template-areas: "getInTouch" "hr1" "agent" "hr2" "logo" "hr3" "copyRight";
   align-items: center;
   color: #ffffff;
+  padding: 3rem 0;
 }
 @media screen and (min-width: 768px) {
   .footer {
