@@ -40,14 +40,21 @@ a {
   padding: 0;
 }
 .container {
-  width: 98vw;
+  width: 100vw;
+  max-width: 60rem;
+  @include tablet {
+    max-width: 78rem;
+  }
+  @include desktop {
+    max-width: 128rem;
+  }
   margin: 0 auto;
-  background-color: $Black;
   padding: 0 2.4rem 0 2.4rem;
-  // @include tablet {
-  //   padding: 0 5rem;
-  // }
 }
+.Background {
+  background-color: $Black;
+}
+
 hr {
   border: 1px solid $Mercury;
 }
@@ -64,12 +71,18 @@ hr {
   grid-template-areas: "logo" "menu";
   justify-items: center;
   gap: 2rem;
+  @include tablet {
+    grid-template-areas: "logo menu menu menu";
+    justify-items: flex-start;
+  }
   &__logo {
     grid-area: logo;
-    font-size: 5rem;
-    font-weight: 300;
-    padding-top: 4rem;
-    line-height: 3rem;
+    font-size: 4rem;
+    font-weight: 400;
+    padding-top: 2rem;
+    @include tablet {
+      padding-top: 0;
+    }
   }
   &__menu {
     color: $Alabaster;
@@ -79,11 +92,18 @@ hr {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     justify-items: center;
+    align-items: center;
     font-size: 2.4rem;
+    @include tablet {
+      width: auto;
+    }
     &--item {
       width: 100%;
       text-align: center;
       padding-bottom: 1rem;
+      @include tablet {
+        padding-bottom: 0;
+      }
     }
     &--item:hover,
     &--item:active {
@@ -119,7 +139,7 @@ hr {
 //********************
 //about Musition
 //********************
-.containerBackAbout {
+.BackgroundAbout {
   background-color: $White;
 }
 .aboutMusicion {
@@ -163,7 +183,7 @@ hr {
 //********************
 //Gallery
 //********************
-.containerBackGallery {
+.BackgroundGallery {
   background-color: $Alabaster;
 }
 .gallery {
