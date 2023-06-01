@@ -195,3 +195,64 @@ hr {
 //********************
 //Footer
 //********************
+.footer {
+  display: grid;
+  grid-template-areas:
+    "getInTouch"
+    "hr1"
+    "agent"
+    "hr2"
+    "logo"
+    "hr3"
+    "copyRight";
+  align-items: center;
+  color: $White;
+  &__social {
+    grid-area: getInTouch;
+    font-size: 4rem;
+    font-weight: 600;
+    &--icons {
+      display: flex;
+      gap: 4rem;
+      &-icon {
+        height: 4rem;
+      }
+    }
+  }
+  &__hr1 {
+    grid-area: hr1;
+  }
+  &__agents {
+    grid-area: agent;
+    line-height: 1.5;
+    margin: 3rem 0;
+    &--agent {
+      font-size: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px dotted $Mercury;
+      &-name {
+        font-weight: 600;
+        font-size: 2.4rem;
+      }
+      &-last {
+        border-bottom: none;
+      }
+    }
+  }
+  &__hr2 {
+    grid-area: hr2;
+  }
+  &__logo {
+    grid-area: logo;
+    font-size: 4rem;
+  }
+  &__hr3 {
+    grid-area: hr3;
+  }
+  &__copyRight {
+    grid-area: copyRight;
+  }
+}
