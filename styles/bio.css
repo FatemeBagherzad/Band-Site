@@ -36,7 +36,7 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.2;
-  color: #323232;
+  color: #000000;
   transition: all 0.5s 0.5s ease-in-out;
 }
 
@@ -167,12 +167,24 @@ hr {
   display: grid;
   grid-template-areas: "header2 header2" "image image" "imgcaption imgcaption" "header3 header3" "introColumn1 introColumn1";
   align-items: center;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .aboutMusicion {
+    grid-template-areas: "header2 header2" "image image" "imgcaption imgcaption" "header3 header3" "introColumn1 introColumn2";
+  }
 }
 .aboutMusicion__header2 {
   grid-area: header2;
   font-size: 4rem;
   font-weight: 600;
-  padding: 2.4rem 0 1.6rem 0;
+  padding: 4.2rem 0 1.6rem 0;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .aboutMusicion__header2 {
+    margin-left: -4rem;
+  }
 }
 .aboutMusicion__img {
   grid-area: image;
@@ -180,20 +192,29 @@ hr {
 }
 .aboutMusicion__imgcaption {
   grid-area: imgcaption;
-  font-size: 2rem;
+  font-size: 2.8rem;
   font-weight: 600;
-  padding: 1.6rem 0 2.4rem 0;
+  line-height: 1.5;
+  padding: 2.4rem 0 4.2rem 0;
 }
 .aboutMusicion__header3 {
   grid-area: header3;
   font-size: 3rem;
   font-weight: 600;
+  line-height: 2;
 }
 .aboutMusicion__intro {
   grid-area: introColumn1;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.5;
   padding: 1.6rem 0 2.4rem 0;
+}
+@media screen and (min-width: 768px) {
+  .aboutMusicion__intro {
+    display: flex;
+    gap: 3rem;
+  }
 }
 
 .BackgroundGallery {
@@ -205,6 +226,7 @@ hr {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  color: #323232;
 }
 .gallery__header {
   font-size: 5rem;
@@ -218,8 +240,13 @@ hr {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   padding: 0 0 2.4rem 0;
+}
+@media screen and (min-width: 768px) {
+  .gallery__images {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .gallery__images--img {
   width: 100%;
@@ -231,17 +258,31 @@ hr {
   align-items: center;
   color: #ffffff;
 }
+@media screen and (min-width: 768px) {
+  .footer {
+    grid-template-areas: "getInTouch getInTouch logo" "hr1 hr1 hr1 " "agent agent agent" "hr3 hr3 hr3" "copyRight  copyRight copyRight";
+  }
+}
 .footer__social {
   grid-area: getInTouch;
   font-size: 4rem;
   font-weight: 600;
 }
+@media screen and (min-width: 768px) {
+  .footer__social {
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    gap: 4rem;
+  }
+}
 .footer__social--icons {
   display: flex;
+  align-content: center;
   gap: 4rem;
 }
 .footer__social--icons-icon {
-  height: 4rem;
+  height: 3rem;
 }
 .footer__hr1 {
   grid-area: hr1;
@@ -251,8 +292,14 @@ hr {
   line-height: 1.5;
   margin: 3rem 0;
 }
+@media screen and (min-width: 768px) {
+  .footer__agents {
+    display: flex;
+    gap: 4rem;
+  }
+}
 .footer__agents--agent {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -261,17 +308,33 @@ hr {
 }
 .footer__agents--agent-name {
   font-weight: 600;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 .footer__agents--agent-last {
   border-bottom: none;
 }
+@media screen and (min-width: 768px) {
+  .footer__agents--agent-last {
+    border-bottom: 1px dotted #e1e1e1;
+  }
+}
 .footer__hr2 {
   grid-area: hr2;
 }
+@media screen and (min-width: 768px) {
+  .footer__hr2 {
+    display: none;
+  }
+}
 .footer__logo {
   grid-area: logo;
-  font-size: 4rem;
+  font-size: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    display: flex;
+    justify-content: end;
+  }
 }
 .footer__hr3 {
   grid-area: hr3;

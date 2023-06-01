@@ -20,7 +20,7 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.2;
-  color: $Black;
+  color: $Darkblack;
   transition: all 0.5s 0.5s ease-in-out;
 }
 h1,
@@ -151,11 +151,25 @@ hr {
     "header3 header3"
     "introColumn1 introColumn1";
   align-items: center;
+  line-height: 1.5;
+
+  @include tablet {
+    grid-template-areas:
+      "header2 header2"
+      "image image"
+      "imgcaption imgcaption"
+      "header3 header3"
+      "introColumn1 introColumn2";
+  }
   &__header2 {
     grid-area: header2;
     font-size: 4rem;
     font-weight: 600;
-    padding: 2.4rem 0 1.6rem 0;
+    padding: 4.2rem 0 1.6rem 0;
+    color: $Black;
+    @include tablet {
+      margin-left: -4rem;
+    }
   }
   &__img {
     grid-area: image;
@@ -163,20 +177,27 @@ hr {
   }
   &__imgcaption {
     grid-area: imgcaption;
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 600;
-    padding: 1.6rem 0 2.4rem 0;
+    line-height: 1.5;
+    padding: 2.4rem 0 4.2rem 0;
   }
   &__header3 {
     grid-area: header3;
     font-size: 3rem;
     font-weight: 600;
+    line-height: 2;
   }
   &__intro {
     grid-area: introColumn1;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.5;
     padding: 1.6rem 0 2.4rem 0;
+    @include tablet {
+      display: flex;
+      gap: 3rem;
+    }
   }
 }
 
@@ -191,6 +212,7 @@ hr {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  color: $Black;
   &__header {
     font-size: 5rem;
     font-weight: 600;
@@ -203,8 +225,11 @@ hr {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     padding: 0 0 2.4rem 0;
+    @include tablet {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     &--img {
       width: 100%;
@@ -227,15 +252,30 @@ hr {
     "copyRight";
   align-items: center;
   color: $White;
+  @include tablet {
+    grid-template-areas:
+      "getInTouch getInTouch logo"
+      "hr1 hr1 hr1 "
+      "agent agent agent"
+      "hr3 hr3 hr3"
+      "copyRight  copyRight copyRight";
+  }
   &__social {
     grid-area: getInTouch;
     font-size: 4rem;
     font-weight: 600;
+    @include tablet {
+      display: flex;
+      justify-content: start;
+      align-content: center;
+      gap: 4rem;
+    }
     &--icons {
       display: flex;
+      align-content: center;
       gap: 4rem;
       &-icon {
-        height: 4rem;
+        height: 3rem;
       }
     }
   }
@@ -246,8 +286,12 @@ hr {
     grid-area: agent;
     line-height: 1.5;
     margin: 3rem 0;
+    @include tablet {
+      display: flex;
+      gap: 4rem;
+    }
     &--agent {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -255,19 +299,29 @@ hr {
       border-bottom: 1px dotted $Mercury;
       &-name {
         font-weight: 600;
-        font-size: 2.4rem;
+        font-size: 1.8rem;
       }
       &-last {
         border-bottom: none;
+        @include tablet {
+          border-bottom: 1px dotted $Mercury;
+        }
       }
     }
   }
   &__hr2 {
     grid-area: hr2;
+    @include tablet {
+      display: none;
+    }
   }
   &__logo {
     grid-area: logo;
-    font-size: 4rem;
+    font-size: 3rem;
+    @include tablet {
+      display: flex;
+      justify-content: end;
+    }
   }
   &__hr3 {
     grid-area: hr3;
