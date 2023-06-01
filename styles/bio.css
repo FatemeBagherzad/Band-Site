@@ -33,10 +33,19 @@ html {
 
 body {
   font-family: "Avenir";
-  font-size: 1.6rem;
   font-weight: 300;
-  transition: all 0.5s 0.5s ease-in-out;
   color: #323232;
+  transition: all 0.5s 0.5s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 ul,
@@ -48,17 +57,66 @@ a {
 }
 
 .container {
-  max-width: 128rem;
+  width: 100vw;
   margin: 0 auto;
-  padding: 0 3.2rem;
   background-color: #323232;
-}
-@media screen and (min-width: 768px) {
-  .container {
-    padding: 0 5rem;
-  }
 }
 
 hr {
   border: 1px solid #e1e1e1;
+}
+
+.activeState {
+  border-bottom: 10px solid #ffffff;
+  font-weight: 600;
+}
+
+.header {
+  color: #fafafa;
+  display: grid;
+  grid-template-areas: "logo" "menu";
+  justify-items: center;
+  gap: 3rem;
+}
+.header__logo {
+  grid-area: logo;
+  font-size: 7rem;
+  font-weight: 300;
+  padding-top: 4rem;
+  line-height: 6.8rem;
+}
+.header__menu {
+  color: #fafafa;
+  grid-area: menu;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  justify-items: center;
+  font-size: 3.6rem;
+}
+.header__menu--item {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.header__menu--item:hover, .header__menu--item:active {
+  border-bottom: 10px solid #ffffff;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.hero {
+  background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 55vh;
+  color: #ffffff;
+  font-size: 7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding-left: 1.6rem;
 }
