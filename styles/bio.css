@@ -158,4 +158,34 @@ hr {
   grid-area: introColumn1;
   font-size: 2rem;
   font-weight: 600;
+  padding: 1.6rem 0 2.4rem 0;
+}
+
+.containerBackGallery {
+  background-color: #fafafa;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.gallery__header {
+  font-size: 5rem;
+  font-weight: 600;
+  width: 100%;
+  justify-self: start;
+  padding: 1.6rem 0 2.4rem 0;
+}
+.gallery__images {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 0 2.4rem 0;
+}
+.gallery__images--img {
+  width: 100%;
 }
