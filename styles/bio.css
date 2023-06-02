@@ -35,7 +35,6 @@ body {
   font-family: "Avenir";
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 2.2;
   color: #000000;
   transition: all 0.5s 0.5s ease-in-out;
 }
@@ -93,17 +92,26 @@ hr {
   display: grid;
   grid-template-areas: "logo" "menu";
   justify-items: center;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   .header {
     grid-template-areas: "logo menu menu menu";
     justify-items: flex-start;
+    height: 8rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    grid-template-areas: "logo menu menu menu . . . ";
+    justify-items: flex-start;
+    height: 8rem;
   }
 }
 .header__logo {
   grid-area: logo;
   font-size: 4rem;
-  font-weight: 400;
+  font-weight: 300;
   padding-top: 2rem;
 }
 @media screen and (min-width: 768px) {
@@ -129,13 +137,10 @@ hr {
 }
 .header__menu--item {
   width: 100%;
-  text-align: center;
-  padding-bottom: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .header__menu--item {
-    padding-bottom: 0;
-  }
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header__menu--item:hover, .header__menu--item:active {
   border-bottom: 5px solid #ffffff;
