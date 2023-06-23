@@ -10,3 +10,8 @@
     @content;
   }
 }
+@mixin smallScreen {
+  @media screen and (max-width: $small-width) {
+    @content;
+  }
+}
