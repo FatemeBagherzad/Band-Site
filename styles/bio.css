@@ -247,7 +247,7 @@ hr {
   font-size: 5rem;
   font-weight: 600;
   width: 100%;
-  justify-self: start;
+  justify-self: flex-start;
   padding: 1.6rem 0 2.4rem 0;
 }
 .gallery__images {
@@ -271,64 +271,65 @@ hr {
   background-color: #ffffff;
 }
 
-.commentSection {
+.commentAndFormSection {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
   color: #323232;
+  width: 100%;
 }
-.commentSection__header {
+.commentAndFormSection__header {
   font-size: 4rem;
   font-weight: 600;
   width: 100%;
-  justify-self: start;
+  justify-self: flex-start;
   padding: 1.6rem 0 2.4rem 0;
 }
 
-.commentForm {
+.formSection {
   display: flex;
-  justify-items: start;
+  justify-items: flex-start;
   align-items: center;
   width: 100%;
   margin: auto;
   gap: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .commentForm {
+  .formSection {
     width: 90%;
   }
 }
 @media screen and (min-width: 1280px) {
-  .commentForm {
+  .formSection {
     width: 60%;
   }
 }
 @media screen and (max-width: 400px) {
-  .commentForm {
+  .formSection {
     flex-direction: column;
   }
 }
-.commentForm__img {
+.formSection__img {
   width: 6rem;
   border-radius: 50%;
   align-self: start;
   margin-top: 2rem;
 }
-.commentForm__form {
+.formSection__form {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   gap: 0.5rem;
 }
-.commentForm__form--label {
+.formSection__form--label {
   color: #e1e1e1;
   font-weight: 600;
   font-size: 1.4rem;
 }
-.commentForm__form--input {
+.formSection__form--input {
   width: 100%;
   padding: 1.2rem;
   margin-bottom: 3rem;
@@ -338,13 +339,13 @@ hr {
   font-family: inherit;
   font-size: 1.4rem;
 }
-.commentForm__form--input:hover, .commentForm__form--input:active {
+.formSection__form--input:hover, .formSection__form--input:active {
   border: 2px solid #323232;
 }
-.commentForm__form--textArea {
+.formSection__form--textArea {
   height: 15rem;
 }
-.commentForm__form--btn {
+.formSection__form--btn {
   background-color: #323232;
   color: #ffffff;
   width: 100%;
@@ -353,10 +354,68 @@ hr {
   font-size: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .commentForm__form--btn {
+  .formSection__form--btn {
     width: auto;
     align-self: flex-end;
   }
+}
+
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  color: #323232;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .commentSection {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .commentSection {
+    width: 60%;
+  }
+}
+
+.comment {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  color: #323232;
+  width: 100%;
+  margin: auto;
+  gap: 2rem;
+  font-size: 2.2rem;
+  line-height: 3rem;
+}
+.comment__hr {
+  margin: 4rem 0;
+  width: 100%;
+}
+.comment__img {
+  width: 6rem;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+.comment__TxtWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.comment__TxtWrapper--userInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+.comment__TxtWrapper--userInfo-date {
+  color: #e1e1e1;
+}
+.comment__TxtWrapper--userInfo--p {
+  font-weight: 500;
 }
 
 .BackgroundFooter {
@@ -383,7 +442,7 @@ hr {
 @media screen and (min-width: 768px) {
   .footer__social {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-content: center;
     gap: 4rem;
   }
@@ -437,7 +496,7 @@ hr {
 @media screen and (min-width: 768px) {
   .footer__logo {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 }
 .footer__hr3 {
