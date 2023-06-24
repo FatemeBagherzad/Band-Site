@@ -128,6 +128,6 @@ function displayComment(obj) {
   commentSection.appendChild(comment);
   commentSection.appendChild(hr);
 }
-displayComment(commentArr[0]);
-displayComment(commentArr[1]);
-displayComment(commentArr[2]);
+for (i = 0; i < commentArr.length; i++) {
+  displayComment(commentArr[i]);
+}
