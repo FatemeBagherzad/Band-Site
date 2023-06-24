@@ -390,6 +390,11 @@ hr {
   font-size: 2.2rem;
   line-height: 3rem;
 }
+@media screen and (max-width: 400px) {
+  .comment {
+    flex-direction: column;
+  }
+}
 .comment__hr {
   margin: 4rem 0;
   width: 100%;
