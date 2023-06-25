@@ -47,16 +47,15 @@ form.addEventListener("submit", function (event) {
 
   //removing all previous comments
   let element = document.getElementById("commentSection");
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
-  }
 
   //Alert for incompelete form
   if (!userN || !commentVal) {
     alert(`📣Please fill out all fields! `);
     document.querySelector(".formSection__form--input").style.borderColor =
       "red";
+    return;
   } else {
+    element.innerText = "";
     document.querySelector(".formSection__form--input").style.borderColor =
       " #e1e1e1";
     const newComment = {
