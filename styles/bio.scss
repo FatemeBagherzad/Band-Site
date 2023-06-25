@@ -130,7 +130,7 @@ hr {
 //********************
 //hero
 //********************
-.hero {
+.heroBio {
   background-image: linear-gradient(
       rgba(32, 32, 32, 0.5),
       rgba(32, 32, 32, 0.5)
@@ -139,8 +139,14 @@ hr {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.hero {
   width: 100vw;
-  height: 55vh;
+  height: 50vh;
+  @include tablet {
+    height: 55vh;
+  }
+
   color: $BandSiteWhite;
   font-size: 4.5rem;
   font-weight: 600;

@@ -1,0 +1,173 @@
+@use "./partials/fonts" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+//*************************
+//hero Section- SHOW page
+//*************************
+.heroShow {
+  background-image: linear-gradient(
+      rgba(32, 32, 32, 0.5),
+      rgba(32, 32, 32, 0.5)
+    ),
+    url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  &__content {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 10fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+    &--text {
+      grid-column: 1;
+      grid-row: 1;
+      &-subHeader {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+    }
+    &--soundTrack {
+      border-radius: 5px;
+      grid-column: 1;
+      grid-row: 2;
+      @include tablet {
+        width: 50%;
+      }
+      @include desktop {
+        grid-column: 2;
+        grid-row: 1;
+        width: 80%;
+        justify-self: center;
+      }
+    }
+  }
+}
+
+//*************************
+//SHOW Section- SHOW page
+//*************************
+.rowTitle {
+  display: none;
+  @include desktop {
+    display: block;
+  }
+}
+.innerTitle {
+  @include desktop {
+    display: none;
+  }
+}
+.shows {
+  width: 100%;
+  @include desktop {
+    display: flex;
+    gap: 5rem;
+    padding-top: 5rem;
+    justify-items: flex-start;
+    align-items: flex-start;
+  }
+  &__header {
+    grid-area: header2;
+    font-size: 5rem;
+    font-weight: 600;
+    display: block;
+    margin: 4.2rem 0 4.2rem 0;
+    color: $BandSiteBlack;
+    @include desktop {
+      margin: 0;
+    }
+  }
+  &__table {
+    &--title {
+      color: $Silver;
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-top: 3rem;
+      @include tablet {
+        margin-bottom: 2rem;
+      }
+    }
+    &--item {
+      font-size: 1.8rem;
+      color: $BandSiteBlack;
+    }
+    &--btn {
+      width: 100%;
+      background-color: $BandSiteBlack;
+      color: $BandSiteWhite;
+      padding: 2rem 5rem;
+      border-radius: 8px;
+      font-size: 2rem;
+      margin: 3rem 0rem;
+      @include tablet {
+        width: fit-content;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        font-size: 1.4rem;
+        margin: 0;
+      }
+    }
+    &--hr {
+      margin: 1.5rem 0;
+      width: 100%;
+    }
+  }
+}
+//Show Section lay out-----------
+.shows__table {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "dateTitle"
+    "date"
+    "venuTitle"
+    "venu"
+    "locationTitle"
+    "location"
+    "ticket"
+    "hrShow";
+  grid-template-columns: 1fr;
+
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  @include tablet {
+    display: grid;
+    grid-template-areas:
+      "dateTitle venuTitle locationTitle  ."
+      "date venu location ticket"
+      "hrShow hrShow hrShow hrShow";
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+}
+.dateTitle {
+  grid-area: dateTitle;
+}
+.date {
+  grid-area: date;
+  font-weight: 600;
+}
+.venuTitle {
+  grid-area: venuTitle;
+}
+.venu {
+  grid-area: venu;
+}
+.locationTitle {
+  grid-area: locationTitle;
+}
+.location {
+  grid-area: location;
+}
+.ticket {
+  grid-area: ticket;
+}
+.hrShow {
+  grid-area: hrShow;
+}
