@@ -103,7 +103,10 @@ let venuTitle = createElement("div", ["shows__table--title"]);
 venuTitle.innerHTML = "VENU";
 let locationTitle = createElement("div", ["shows__table--title"]);
 locationTitle.innerHTML = "LOCATION";
-let emptyTitle = createElement("div", ["shows__table--title"]);
+let emptyTitle = createElement("div", [
+  "shows__table--title",
+  "tabletitlehidden",
+]);
 
 titleWrapperDesktop.appendChild(dateTitle);
 titleWrapperDesktop.appendChild(venuTitle);

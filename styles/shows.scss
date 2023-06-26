@@ -28,8 +28,9 @@
       grid-column: 1;
       grid-row: 1;
       &-subHeader {
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: 500;
+        margin-bottom: 4rem;
       }
     }
     &--soundTrack {
@@ -64,28 +65,35 @@
     display: none;
   }
 }
+.tabletitlehidden {
+  visibility: hidden;
+  width: 15%;
+}
 .tableLayout {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   flex-wrap: wrap;
 }
 .shows {
+  @include tablet {
+    padding-bottom: 10rem;
+  }
   @include desktop {
     display: flex;
-    gap: 15rem;
+    gap: 10rem;
     justify-content: space-between;
     align-items: flex-start;
   }
   &__header {
     grid-area: header2;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 600;
-    display: block;
-    margin: 5rem 0 4rem 0;
+    margin: 10rem 0 4rem 0;
     color: $BandSiteBlack;
-    @include desktop {
-      margin-top: 3rem;
+    @include tablet {
+      margin-top: 10rem;
     }
   }
   &__tableWrapper {
@@ -97,7 +105,8 @@
     margin: 4.2rem 0 2rem 0;
     &--border {
       @include tablet {
-        border-bottom: 2px solid $Mercury;
+        line-height: 3;
+        border-bottom: 3px solid $Mercury;
       }
     }
     &--title {
@@ -106,20 +115,24 @@
       font-size: 2rem;
       padding-top: 3rem;
       @include tablet {
-        padding: 1rem 0 2rem 0;
+        font-size: 2.4rem;
+        padding: 3rem 0 2rem 0;
       }
       @include desktop {
-        // padding-top: 0rem;
+        padding: 10rem 0 5rem 0;
       }
     }
     &--item {
       font-family: "Avenir";
-      font-size: 2.2rem;
+      font-size: 3rem;
       font-weight: 500;
       padding-top: 1rem;
       color: $BandSiteBlack;
       &-boldItem {
         font-weight: 900;
+      }
+      @include tablet {
+        font-size: 2.2rem;
       }
     }
     &--btn {
@@ -127,20 +140,23 @@
       background-color: $BandSiteBlack;
       color: $BandSiteWhite;
       padding: 2rem 5rem;
-      border-radius: 8px;
-      font-size: 2rem;
+      border-radius: 1rem;
+      font-size: 3rem;
       margin: 3rem 0 1rem 0;
       @include tablet {
         margin: 1rem auto;
         width: fit-content;
-        padding: 1rem 2rem;
-        border-radius: 4px;
-        font-size: 1.4rem;
+        padding: 1.2rem 3rem;
+        border-radius: 1.2rem;
+        font-size: 1.8rem;
+      }
+      @include desktop {
+        padding: 1.2rem 5rem;
       }
     }
 
     &--hr {
-      margin: 1.5rem 0;
+      margin: 2rem 0;
       width: 100%;
       @include tablet {
         display: none;

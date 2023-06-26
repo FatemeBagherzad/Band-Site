@@ -64,7 +64,7 @@ a {
 
 .container {
   width: 100vw;
-  max-width: 60rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding: 0 2.4rem 0 2.4rem;
 }
@@ -90,6 +90,14 @@ hr {
 .activeState {
   border-bottom: 5px solid #ffffff;
   font-weight: 600;
+}
+
+.sectionHeader {
+  font-size: 5rem;
+  font-weight: 600;
+  padding: 8rem 0 4rem 0;
+  width: 100%;
+  color: #323232;
 }
 
 .BackgroundHeader {
@@ -170,7 +178,7 @@ hr {
   width: 100vw;
   height: 50vh;
   color: #ffffff;
-  font-size: 4.5rem;
+  font-size: 6rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -199,10 +207,6 @@ hr {
 }
 .aboutMusicion__header2 {
   grid-area: header2;
-  font-size: 4rem;
-  font-weight: 600;
-  padding: 4.2rem 0 1.6rem 0;
-  color: #323232;
 }
 @media screen and (min-width: 768px) {
   .aboutMusicion__header2 {
@@ -252,11 +256,7 @@ hr {
   color: #323232;
 }
 .gallery__header {
-  font-size: 5rem;
-  font-weight: 600;
-  width: 100%;
   justify-self: flex-start;
-  padding: 1.6rem 0 2.4rem 0;
 }
 .gallery__images {
   display: grid;
@@ -288,11 +288,7 @@ hr {
   width: 100%;
 }
 .commentAndFormSection__header {
-  font-size: 4rem;
-  font-weight: 600;
-  width: 100%;
   justify-self: flex-start;
-  padding: 1.6rem 0 2.4rem 0;
 }
 
 .formSection {
@@ -386,6 +382,13 @@ hr {
     width: 60%;
   }
 }
+.commentSection__header {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 100%;
+  justify-self: flex-start;
+  padding: 8rem 0 4rem 0;
+}
 
 .comment {
   display: flex;
@@ -440,7 +443,7 @@ hr {
   grid-template-areas: "getInTouch" "hr1" "agent" "hr2" "logo" "hr3" "copyRight";
   align-items: center;
   color: #ffffff;
-  padding: 3rem 2rem;
+  padding: 5rem 2rem;
 }
 @media screen and (min-width: 768px) {
   .footer {
