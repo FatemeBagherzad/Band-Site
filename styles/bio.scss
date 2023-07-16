@@ -12,8 +12,12 @@
   text-decoration: none;
 }
 html {
-  font-size: 62.5%;
+  font-size: 50%;
+
   overflow-x: hidden;
+  @include tablet {
+    font-size: 62.5%;
+  }
 }
 body {
   font-family: "Avenir";
@@ -40,7 +44,7 @@ a {
 }
 .container {
   width: 100vw;
-  max-width: 60rem;
+  max-width: 80rem;
   @include tablet {
     max-width: 78rem;
   }
@@ -51,19 +55,29 @@ a {
   padding: 0 2.4rem 0 2.4rem;
 }
 .Background {
-  background-color: $Black;
+  background-color: $BandSiteBlack;
 }
 
 hr {
   border: 1px solid $Mercury;
 }
 .activeState {
-  border-bottom: 5px solid $White;
+  border-bottom: 5px solid $BandSiteWhite;
   font-weight: 600;
+}
+.sectionHeader {
+  font-size: 5rem;
+  font-weight: 600;
+  padding: 8rem 0 4rem 0;
+  width: 100%;
+  color: $BandSiteBlack;
 }
 //********************
 //header
 //********************
+.BackgroundHeader {
+  background-color: $BandSiteBlack;
+}
 .header {
   color: $Alabaster;
   display: grid;
@@ -111,8 +125,8 @@ hr {
         justify-content: center;
         &:hover,
         &:active {
-          border-bottom: 5px solid $White;
-          color: $White;
+          border-bottom: 5px solid $BandSiteWhite;
+          color: $BandSiteWhite;
           font-weight: 600;
         }
       }
@@ -123,7 +137,7 @@ hr {
 //********************
 //hero
 //********************
-.hero {
+.heroBio {
   background-image: linear-gradient(
       rgba(32, 32, 32, 0.5),
       rgba(32, 32, 32, 0.5)
@@ -132,10 +146,16 @@ hr {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.hero {
   width: 100vw;
-  height: 55vh;
-  color: $White;
-  font-size: 4.5rem;
+  height: 50vh;
+  @include tablet {
+    height: 55vh;
+  }
+
+  color: $BandSiteWhite;
+  font-size: 6rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -145,7 +165,7 @@ hr {
 //about Musition
 //********************
 .BackgroundAbout {
-  background-color: $White;
+  background-color: $BandSiteWhite;
 }
 .aboutMusicion {
   display: grid;
@@ -169,10 +189,6 @@ hr {
   }
   &__header2 {
     grid-area: header2;
-    font-size: 4rem;
-    font-weight: 600;
-    padding: 4.2rem 0 1.6rem 0;
-    color: $Black;
     @include tablet {
       margin-left: -6rem;
     }
@@ -218,13 +234,9 @@ hr {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  color: $Black;
+  color: $BandSiteBlack;
   &__header {
-    font-size: 5rem;
-    font-weight: 600;
-    width: 100%;
-    justify-self: start;
-    padding: 1.6rem 0 2.4rem 0;
+    justify-self: flex-start;
   }
   &__images {
     display: grid;
@@ -242,10 +254,161 @@ hr {
     }
   }
 }
+//********************
+//CommentForm Section
+//********************
+.BackgroundComment {
+  background-color: $BandSiteWhite;
+}
+.commentAndFormSection {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  color: $BandSiteBlack;
+  width: 100%;
+  &__header {
+    justify-self: flex-start;
+  }
+}
+.formSection {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  gap: 2rem;
+  @include tablet {
+    width: 90%;
+  }
+  @include desktop {
+    width: 60%;
+  }
+  @include smallScreen {
+    flex-direction: column;
+  }
+  &__img {
+    width: 6rem;
+    border-radius: 50%;
+    align-self: start;
+    margin-top: 2rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+    &--label {
+      color: $Mercury;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+    &--input {
+      width: 100%;
+      padding: 1.2rem;
+      margin-bottom: 3rem;
+      background-color: $Alabaster;
+      border: 2px solid $Mercury;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1.4rem;
+      &:hover,
+      &:active {
+        border: 2px solid $BandSiteBlack;
+      }
+    }
+    &--textArea {
+      height: 15rem;
+    }
+    &--btn {
+      background-color: $BandSiteBlack;
+      color: $BandSiteWhite;
+      width: 100%;
+      padding: 1.2rem 5rem;
+      border-radius: 4px;
+      font-size: 2rem;
+      @include tablet {
+        width: auto;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+//********************
+//Comment Section
+//********************
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  color: $BandSiteBlack;
+  width: 100%;
+  @include tablet {
+    width: 90%;
+  }
+  @include desktop {
+    width: 60%;
+  }
+  &__header {
+    font-size: 4rem;
+    font-weight: 600;
+    width: 100%;
+    justify-self: flex-start;
+    padding: 8rem 0 4rem 0;
+  }
+}
+.comment {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  color: $BandSiteBlack;
+  width: 100%;
+  margin: auto;
+  gap: 2rem;
+  font-size: 2.2rem;
+  line-height: 3rem;
+  @include smallScreen {
+    flex-direction: column;
+  }
+  &__hr {
+    margin: 4rem 0;
+    width: 100%;
+  }
+  &__img {
+    width: 6rem;
+    border-radius: 50%;
+    align-self: flex-start;
+  }
+  &__TxtWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &--userInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+      &-date {
+        color: $Mercury;
+      }
+      &--p {
+        font-weight: 500;
+      }
+    }
+  }
+}
 
 //********************
 //Footer
 //********************
+.BackgroundFooter {
+  background-color: $BandSiteBlack;
+}
 .footer {
   display: grid;
   grid-template-areas:
@@ -257,8 +420,8 @@ hr {
     "hr3"
     "copyRight";
   align-items: center;
-  color: $White;
-  padding: 3rem 0;
+  color: $BandSiteWhite;
+  padding: 5rem 2rem;
   @include tablet {
     grid-template-areas:
       "getInTouch getInTouch logo"
@@ -273,7 +436,7 @@ hr {
     font-weight: 600;
     @include tablet {
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       align-content: center;
       gap: 4rem;
     }
@@ -321,7 +484,7 @@ hr {
     padding: 1rem 0;
     @include tablet {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
     }
   }
   &__hr3 {

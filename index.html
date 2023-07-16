@@ -12,30 +12,34 @@
   </head>
 
   <body>
-    <header class="Background">
+    <header class="BackgroundHeader">
       <header class="header container">
         <a href="./index.html" class="header__logo">BANDSITE</a>
 
         <ul class="header__menu">
           <li class="header__menu--li">
             <div class="header__menu--li-item activeState">
-              <a href="#">Biography</a>
+              <a href="./index.html">Biography</a>
             </div>
           </li>
           <li class="header__menu--li">
-            <div class="header__menu--li-item"><a href="#">Shows</a></div>
+            <div class="header__menu--li-item">
+              <a href="./pages/shows.html">Shows</a>
+            </div>
           </li>
         </ul>
       </header>
     </header>
 
-    <div class="hero">
+    <div class="hero heroBio">
       <h1 class="Hero__header container">The Bees Knees</h1>
     </div>
 
-    <section class="Background BackgroundAbout" id="aboutMusicion">
+    <section class="BackgroundAbout" id="aboutMusicion">
       <section class="aboutMusicion container">
-        <h2 class="aboutMusicion__header2">About The Musicions</h2>
+        <h2 class="aboutMusicion__header2 sectionHeader">
+          About The Musicions
+        </h2>
         <img
           src="./assets/images/band.jpg"
           alt="Music Concert"
@@ -74,9 +78,9 @@
       </section>
     </section>
 
-    <section class="Background BackgroundGallery" id="Gallery">
+    <section class="BackgroundGallery" id="Gallery">
       <setion class="gallery container">
-        <h2 class="gallery__header">Photo Gallery</h2>
+        <h2 class="gallery__header sectionHeader">Photo Gallery</h2>
         <div class="gallery__images">
           <img
             src="./assets/images/Photo-gallery-1.jpg"
@@ -136,7 +140,79 @@
       </setion>
     </section>
 
-    <footer class="Background">
+    <section class="BackgroundComment">
+      <section class="container commentAndFormSection">
+        <h2 class="commentSection__header sectionHeader">
+          Join the conversation
+        </h2>
+
+        <form class="formSection">
+          <img
+            alt="Person Proflie"
+            src="./assets/images/Mohan-muruge.jpg"
+            class="formSection__img"
+          />
+          <div class="formSection__form" id="formSection__form">
+            <label for="name" class="formSection__form--label">NAME</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              class="formSection__form--input"
+              autocomplete="off"
+            />
+
+            <label for="comment" class="formSection__form--label"
+              >COMMENT</label
+            >
+            <textarea
+              type="text"
+              id="comment"
+              name="comment"
+              placeholder="Add a new comment"
+              class="formSection__form--input formSection__form--textArea"
+              autocomplete="off"
+            ></textarea>
+
+            <button class="formSection__form--btn">COMMENT</button>
+          </div>
+        </form>
+
+        <hr class="comment__hr" />
+
+        <div class="commentSection" id="commentSection">
+          <!-- ⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔ -->
+          <!-- This part is left for having visual idea of comment sections -->
+          <!-- <div class="comment">
+            <img
+              class="comment__img"
+              alt="peron image"
+              src="./assets/images/person1.jpg"
+            />
+            <div class="comment__TxtWrapper">
+              <div class="comment__TxtWrapper--userInfo">
+                <span class="comment__TxtWrapper--userInfo-userN"
+                  >Connor Walton</span
+                >
+                <span class="comment__TxtWrapper--userInfo-date"
+                  >02/17/2021</span
+                >
+              </div>
+              <p class="comment__TxtWrapper--p">
+                This is art. This is inexplicable magic expressed in the purest
+                way, everything that makes up this majestic work deserves
+                reverence. Let us appreciate this for what it is and what it
+                contains.
+              </p>
+            </div>
+          </div> 
+          <hr class="comment__hr" /> -->
+        </div>
+      </section>
+    </section>
+
+    <footer class="BackgroundFooter">
       <footer class="footer container">
         <div class="footer__social">
           <h2 class="footer__social--header">Get in Touch</h2>
@@ -221,5 +297,7 @@
         </div>
       </footer>
     </footer>
+
+    <script src="./scripts/index-page.js"></script>
   </body>
 </html>

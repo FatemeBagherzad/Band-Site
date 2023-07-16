@@ -1,0 +1,166 @@
+@use "./partials/fonts" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+//*************************
+//hero Section- SHOW page
+//*************************
+.heroShow {
+  background-image: linear-gradient(
+      rgba(32, 32, 32, 0.5),
+      rgba(32, 32, 32, 0.5)
+    ),
+    url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  &__content {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 10fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+    &--text {
+      grid-column: 1;
+      grid-row: 1;
+      &-subHeader {
+        font-size: 4rem;
+        font-weight: 500;
+        margin-bottom: 4rem;
+      }
+    }
+    &--soundTrack {
+      border-radius: 5px;
+      grid-column: 1;
+      grid-row: 2;
+      @include tablet {
+        width: 50%;
+      }
+      @include desktop {
+        grid-column: 2;
+        grid-row: 1;
+        width: 80%;
+        justify-self: center;
+      }
+    }
+  }
+}
+
+//*************************
+//SHOW Section- SHOW page
+//*************************
+#tabletDesktopTable {
+  display: none;
+  @include tablet {
+    display: table;
+  }
+}
+
+#mobileTable {
+  @include tablet {
+    display: none;
+  }
+}
+.tabletitlehidden {
+  visibility: hidden;
+  width: 15%;
+}
+.tableLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.shows {
+  @include tablet {
+    padding-bottom: 10rem;
+  }
+  @include desktop {
+    display: flex;
+    gap: 10rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__header {
+    grid-area: header2;
+    font-size: 6rem;
+    font-weight: 600;
+    margin: 10rem 0 4rem 0;
+    color: $BandSiteBlack;
+    @include tablet {
+      margin-top: 10rem;
+    }
+  }
+  &__tableWrapper {
+    width: 100%;
+  }
+  &__table {
+    width: 100%;
+    text-align: left;
+    margin: 4.2rem 0 2rem 0;
+    &--border {
+      @include tablet {
+        line-height: 3;
+        border-bottom: 3px solid $Mercury;
+      }
+    }
+    &--title {
+      color: $Silver;
+      font-weight: 600;
+      font-size: 2rem;
+      padding-top: 3rem;
+      @include tablet {
+        font-size: 2.4rem;
+        padding: 3rem 0 2rem 0;
+      }
+      @include desktop {
+        padding: 10rem 0 5rem 0;
+      }
+    }
+    &--item {
+      font-family: "Avenir";
+      font-size: 3rem;
+      font-weight: 500;
+      padding-top: 1rem;
+      color: $BandSiteBlack;
+      &-boldItem {
+        font-weight: 900;
+      }
+      @include tablet {
+        font-size: 2.2rem;
+      }
+    }
+    &--btn {
+      width: 100%;
+      background-color: $BandSiteBlack;
+      color: $BandSiteWhite;
+      padding: 2rem 5rem;
+      border-radius: 1rem;
+      font-size: 3rem;
+      margin: 3rem 0 1rem 0;
+      @include tablet {
+        margin: 1rem auto;
+        width: fit-content;
+        padding: 1.2rem 3rem;
+        border-radius: 1.2rem;
+        font-size: 1.8rem;
+      }
+      @include desktop {
+        padding: 1.2rem 5rem;
+      }
+    }
+
+    &--hr {
+      margin: 2rem 0;
+      width: 100%;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}

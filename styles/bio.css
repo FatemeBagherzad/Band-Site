@@ -1,21 +1,21 @@
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format(OpenType);
-  src: url("../../assets/fonts/Alternative/AvenirNextLTPro.ttf") format(truetype);
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format(OpenType);
+  src: url("../assets/fonts/Alternative/AvenirNextLTPro.ttf") format(truetype);
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format(OpenType);
-  src: url("../../assets/fonts/Alternative/AvenirNextLTProDemi.ttf") format(truetype);
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format(OpenType);
+  src: url("../assets/fonts/Alternative/AvenirNextLTProDemi.ttf") format(truetype);
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format(OpenType);
-  src: url("../../assets/fonts/Alternative/AvenirNextLTProBold.ttf") format(truetype);
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format(OpenType);
+  src: url("../assets/fonts/Alternative/AvenirNextLTProBold.ttf") format(truetype);
   font-weight: 900;
   font-style: normal;
 }
@@ -27,8 +27,13 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 50%;
   overflow-x: hidden;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
 }
 
 body {
@@ -59,7 +64,7 @@ a {
 
 .container {
   width: 100vw;
-  max-width: 60rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding: 0 2.4rem 0 2.4rem;
 }
@@ -85,6 +90,18 @@ hr {
 .activeState {
   border-bottom: 5px solid #ffffff;
   font-weight: 600;
+}
+
+.sectionHeader {
+  font-size: 5rem;
+  font-weight: 600;
+  padding: 8rem 0 4rem 0;
+  width: 100%;
+  color: #323232;
+}
+
+.BackgroundHeader {
+  background-color: #323232;
 }
 
 .header {
@@ -150,18 +167,26 @@ hr {
   font-weight: 600;
 }
 
-.hero {
+.heroBio {
   background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/images/hero-bio.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.hero {
   width: 100vw;
-  height: 55vh;
+  height: 50vh;
   color: #ffffff;
-  font-size: 4.5rem;
+  font-size: 6rem;
   font-weight: 600;
   display: flex;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 55vh;
+  }
 }
 
 .BackgroundAbout {
@@ -182,10 +207,6 @@ hr {
 }
 .aboutMusicion__header2 {
   grid-area: header2;
-  font-size: 4rem;
-  font-weight: 600;
-  padding: 4.2rem 0 1.6rem 0;
-  color: #323232;
 }
 @media screen and (min-width: 768px) {
   .aboutMusicion__header2 {
@@ -235,11 +256,7 @@ hr {
   color: #323232;
 }
 .gallery__header {
-  font-size: 5rem;
-  font-weight: 600;
-  width: 100%;
-  justify-self: start;
-  padding: 1.6rem 0 2.4rem 0;
+  justify-self: flex-start;
 }
 .gallery__images {
   display: grid;
@@ -258,12 +275,175 @@ hr {
   width: 100%;
 }
 
+.BackgroundComment {
+  background-color: #ffffff;
+}
+
+.commentAndFormSection {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  color: #323232;
+  width: 100%;
+}
+.commentAndFormSection__header {
+  justify-self: flex-start;
+}
+
+.formSection {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .formSection {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .formSection {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .formSection {
+    flex-direction: column;
+  }
+}
+.formSection__img {
+  width: 6rem;
+  border-radius: 50%;
+  align-self: start;
+  margin-top: 2rem;
+}
+.formSection__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.5rem;
+}
+.formSection__form--label {
+  color: #e1e1e1;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.formSection__form--input {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 3rem;
+  background-color: #fafafa;
+  border: 2px solid #e1e1e1;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1.4rem;
+}
+.formSection__form--input:hover, .formSection__form--input:active {
+  border: 2px solid #323232;
+}
+.formSection__form--textArea {
+  height: 15rem;
+}
+.formSection__form--btn {
+  background-color: #323232;
+  color: #ffffff;
+  width: 100%;
+  padding: 1.2rem 5rem;
+  border-radius: 4px;
+  font-size: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .formSection__form--btn {
+    width: auto;
+    align-self: flex-end;
+  }
+}
+
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  color: #323232;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .commentSection {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .commentSection {
+    width: 60%;
+  }
+}
+.commentSection__header {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 100%;
+  justify-self: flex-start;
+  padding: 8rem 0 4rem 0;
+}
+
+.comment {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  color: #323232;
+  width: 100%;
+  margin: auto;
+  gap: 2rem;
+  font-size: 2.2rem;
+  line-height: 3rem;
+}
+@media screen and (max-width: 400px) {
+  .comment {
+    flex-direction: column;
+  }
+}
+.comment__hr {
+  margin: 4rem 0;
+  width: 100%;
+}
+.comment__img {
+  width: 6rem;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+.comment__TxtWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.comment__TxtWrapper--userInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+.comment__TxtWrapper--userInfo-date {
+  color: #e1e1e1;
+}
+.comment__TxtWrapper--userInfo--p {
+  font-weight: 500;
+}
+
+.BackgroundFooter {
+  background-color: #323232;
+}
+
 .footer {
   display: grid;
   grid-template-areas: "getInTouch" "hr1" "agent" "hr2" "logo" "hr3" "copyRight";
   align-items: center;
   color: #ffffff;
-  padding: 3rem 0;
+  padding: 5rem 2rem;
 }
 @media screen and (min-width: 768px) {
   .footer {
@@ -278,7 +458,7 @@ hr {
 @media screen and (min-width: 768px) {
   .footer__social {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-content: center;
     gap: 4rem;
   }
@@ -332,7 +512,7 @@ hr {
 @media screen and (min-width: 768px) {
   .footer__logo {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 }
 .footer__hr3 {
