@@ -1,6 +1,6 @@
-@use "./partials/fonts" as *;
-@use "./partials/variables" as *;
-@use "./partials/mixins" as *;
+@use './partials/fonts' as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
 
 //*************************
 //hero Section- SHOW page
@@ -91,7 +91,7 @@
     font-size: 6rem;
     font-weight: 600;
     margin: 10rem 0 4rem 0;
-    color: $BandSiteBlack;
+    color: $txtAndDarkBack;
     @include tablet {
       margin-top: 10rem;
     }
@@ -106,11 +106,11 @@
     &--border {
       @include tablet {
         line-height: 3;
-        border-bottom: 3px solid $Mercury;
+        border-bottom: 3px solid $Lines;
       }
     }
     &--title {
-      color: $Silver;
+      color: $SecondryTxt;
       font-weight: 600;
       font-size: 2rem;
       padding-top: 3rem;
@@ -123,11 +123,11 @@
       }
     }
     &--item {
-      font-family: "Avenir";
+      font-family: 'Avenir';
       font-size: 3rem;
       font-weight: 500;
       padding-top: 1rem;
-      color: $BandSiteBlack;
+      color: $txtAndDarkBack;
       &-boldItem {
         font-weight: 900;
       }
@@ -137,8 +137,8 @@
     }
     &--btn {
       width: 100%;
-      background-color: $BandSiteBlack;
-      color: $BandSiteWhite;
+      background-color: $txtAndDarkBack;
+      color: $txtAndLightBack;
       padding: 2rem 5rem;
       border-radius: 1rem;
       font-size: 3rem;

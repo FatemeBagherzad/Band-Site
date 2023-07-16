@@ -13,7 +13,7 @@
 
   <body>
     <header class="BackgroundHeader">
-      <header class="header container">
+      <div class="header container">
         <a href="./index.html" class="header__logo">BANDSITE</a>
 
         <ul class="header__menu">
@@ -28,7 +28,7 @@
             </div>
           </li>
         </ul>
-      </header>
+      </div>
     </header>
 
     <div class="hero heroBio">
@@ -36,7 +36,7 @@
     </div>
 
     <section class="BackgroundAbout" id="aboutMusicion">
-      <section class="aboutMusicion container">
+      <div class="aboutMusicion container">
         <h2 class="aboutMusicion__header2 sectionHeader">
           About The Musicions
         </h2>
@@ -75,73 +75,64 @@
             looking to be released in late 2021.
           </p>
         </div>
-      </section>
+      </div>
     </section>
 
     <section class="BackgroundGallery" id="Gallery">
-      <setion class="gallery container">
+      <div class="gallery container">
         <h2 class="gallery__header sectionHeader">Photo Gallery</h2>
         <div class="gallery__images">
           <img
             src="./assets/images/Photo-gallery-1.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-2.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-3.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-4.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-5.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-6.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-7.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-8.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-9.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
         </div>
-      </setion>
+      </div>
     </section>
 
     <section class="BackgroundComment">
-      <section class="container commentAndFormSection">
+      <div class="container commentAndFormSection">
         <h2 class="commentSection__header sectionHeader">
           Join the conversation
         </h2>
@@ -167,7 +158,6 @@
               >COMMENT</label
             >
             <textarea
-              type="text"
               id="comment"
               name="comment"
               placeholder="Add a new comment"
@@ -209,11 +199,11 @@
           </div> 
           <hr class="comment__hr" /> -->
         </div>
-      </section>
+      </div>
     </section>
 
     <footer class="BackgroundFooter">
-      <footer class="footer container">
+      <div class="footer container">
         <div class="footer__social">
           <h2 class="footer__social--header">Get in Touch</h2>
           <div class="footer__social--icons">
@@ -222,7 +212,6 @@
                 src="./assets/icons/SVG/Icon-instagram.svg"
                 alt="Instageram Icon"
                 class="footer__social--icons-icon"
-                \
               />
             </a>
 
@@ -231,7 +220,6 @@
                 src="./assets/icons/SVG/Icon-facebook.svg"
                 alt="Instageram Icon"
                 class="footer__social--icons-icon"
-                \
               />
             </a>
 
@@ -240,7 +228,6 @@
                 src="./assets/icons/SVG/Icon-twitter.svg"
                 alt="Instageram Icon"
                 class="footer__social--icons-icon"
-                \
               />
             </a>
           </div>
@@ -255,7 +242,7 @@
             </h4>
             <p>503 Broadway Penthouse,<br />New York, NY 10012, USA</p>
             <p>
-              <a href="mailto: info@thebeesknees.com">info@thebeesknees.com</a>
+              <a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
             </p>
           </div>
 
@@ -265,7 +252,7 @@
             </h4>
             <p>Booking Agent for<br />US / South America / Japan</p>
             <p>
-              <a href="mailto: pearl.gregg@limitlessag.com"
+              <a href="mailto:pearl.gregg@limitlessag.com"
                 >pearl.gregg@limitlessag.com</a
               >
             </p>
@@ -277,7 +264,7 @@
             </h4>
             <p>Booking Agent for<br />UK / EU / AU</p>
             <p>
-              <a href="mailto: cwhyte@archentertainment.com"
+              <a href="mailto:cwhyte@archentertainment.com"
                 >cwhyte@archentertainment.com</a
               >
             </p>
@@ -295,9 +282,10 @@
         <div class="footer__copyRight">
           <p>Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </div>
-      </footer>
+      </div>
     </footer>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./scripts/index-page.js"></script>
   </body>
 </html>

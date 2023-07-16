@@ -1,6 +1,6 @@
-@use "./partials/fonts" as *;
-@use "./partials/variables" as *;
-@use "./partials/mixins" as *;
+@use './partials/fonts' as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
 
 //********************
 //reset
@@ -20,10 +20,10 @@ html {
   }
 }
 body {
-  font-family: "Avenir";
+  font-family: 'Avenir';
   font-size: 1.6rem;
   font-weight: 400;
-  color: $Darkblack;
+  color: $txtAndDarkBack;
   transition: all 0.5s 0.5s ease-in-out;
 }
 h1,
@@ -55,14 +55,14 @@ a {
   padding: 0 2.4rem 0 2.4rem;
 }
 .Background {
-  background-color: $BandSiteBlack;
+  background-color: $txtAndDarkBack;
 }
 
 hr {
-  border: 1px solid $Mercury;
+  border: 1px solid $Lines;
 }
 .activeState {
-  border-bottom: 5px solid $BandSiteWhite;
+  border-bottom: 5px solid $txtAndLightBack;
   font-weight: 600;
 }
 .sectionHeader {
@@ -70,27 +70,27 @@ hr {
   font-weight: 600;
   padding: 8rem 0 4rem 0;
   width: 100%;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
 }
 //********************
 //header
 //********************
 .BackgroundHeader {
-  background-color: $BandSiteBlack;
+  background-color: $txtAndDarkBack;
 }
 .header {
-  color: $Alabaster;
+  color: $SecondryLightBack;
   display: grid;
-  grid-template-areas: "logo" "menu";
+  grid-template-areas: 'logo' 'menu';
   justify-items: center;
   align-items: center;
   @include tablet {
-    grid-template-areas: "logo menu menu menu";
+    grid-template-areas: 'logo menu menu menu';
     justify-items: flex-start;
     height: 8rem;
   }
   @include desktop {
-    grid-template-areas: "logo menu menu menu . . . ";
+    grid-template-areas: 'logo menu menu menu . . . ';
     justify-items: flex-start;
     height: 8rem;
   }
@@ -104,7 +104,7 @@ hr {
     }
   }
   &__menu {
-    color: $Alabaster;
+    color: $SecondryLightBack;
     grid-area: menu;
     width: 100%;
     display: grid;
@@ -125,8 +125,8 @@ hr {
         justify-content: center;
         &:hover,
         &:active {
-          border-bottom: 5px solid $BandSiteWhite;
-          color: $BandSiteWhite;
+          border-bottom: 5px solid $txtAndLightBack;
+          color: $txtAndLightBack;
           font-weight: 600;
         }
       }
@@ -150,11 +150,14 @@ hr {
 .hero {
   width: 100vw;
   height: 50vh;
-  @include tablet {
-    height: 55vh;
+  // @include tablet {
+  //   height: 55vh;
+  // }
+  @include deviceLandscape {
+    height: 100vh;
   }
 
-  color: $BandSiteWhite;
+  color: $txtAndLightBack;
   font-size: 6rem;
   font-weight: 600;
   display: flex;
@@ -165,26 +168,26 @@ hr {
 //about Musition
 //********************
 .BackgroundAbout {
-  background-color: $BandSiteWhite;
+  background-color: $txtAndLightBack;
 }
 .aboutMusicion {
   display: grid;
   grid-template-areas:
-    "header2 header2"
-    "image image"
-    "imgcaption imgcaption"
-    "header3 header3"
-    "introColumn1 introColumn1";
+    'header2 header2'
+    'image image'
+    'imgcaption imgcaption'
+    'header3 header3'
+    'introColumn1 introColumn1';
   align-items: center;
   line-height: 1.5;
 
   @include tablet {
     grid-template-areas:
-      "header2 header2"
-      "image image"
-      "imgcaption imgcaption"
-      "header3 header3"
-      "introColumn1 introColumn2";
+      'header2 header2'
+      'image image'
+      'imgcaption imgcaption'
+      'header3 header3'
+      'introColumn1 introColumn2';
     padding: 0 10rem;
   }
   &__header2 {
@@ -227,14 +230,14 @@ hr {
 //Gallery
 //********************
 .BackgroundGallery {
-  background-color: $Alabaster;
+  background-color: $SecondryLightBack;
 }
 .gallery {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
   &__header {
     justify-self: flex-start;
   }
@@ -258,14 +261,14 @@ hr {
 //CommentForm Section
 //********************
 .BackgroundComment {
-  background-color: $BandSiteWhite;
+  background-color: $txtAndLightBack;
 }
 .commentAndFormSection {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
   width: 100%;
   &__header {
     justify-self: flex-start;
@@ -301,7 +304,7 @@ hr {
     width: 100%;
     gap: 0.5rem;
     &--label {
-      color: $Mercury;
+      color: $Lines;
       font-weight: 600;
       font-size: 1.4rem;
     }
@@ -309,22 +312,22 @@ hr {
       width: 100%;
       padding: 1.2rem;
       margin-bottom: 3rem;
-      background-color: $Alabaster;
-      border: 2px solid $Mercury;
+      background-color: $SecondryLightBack;
+      border: 2px solid $Lines;
       border-radius: 4px;
       font-family: inherit;
       font-size: 1.4rem;
       &:hover,
       &:active {
-        border: 2px solid $BandSiteBlack;
+        border: 2px solid $txtAndDarkBack;
       }
     }
     &--textArea {
       height: 15rem;
     }
     &--btn {
-      background-color: $BandSiteBlack;
-      color: $BandSiteWhite;
+      background-color: $txtAndDarkBack;
+      color: $txtAndLightBack;
       width: 100%;
       padding: 1.2rem 5rem;
       border-radius: 4px;
@@ -345,7 +348,7 @@ hr {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
   width: 100%;
   @include tablet {
     width: 90%;
@@ -365,7 +368,7 @@ hr {
   display: flex;
   justify-items: center;
   align-items: center;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
   width: 100%;
   margin: auto;
   gap: 2rem;
@@ -394,7 +397,7 @@ hr {
       font-weight: 600;
       margin-bottom: 1.6rem;
       &-date {
-        color: $Mercury;
+        color: $Lines;
       }
       &--p {
         font-weight: 500;
@@ -407,28 +410,28 @@ hr {
 //Footer
 //********************
 .BackgroundFooter {
-  background-color: $BandSiteBlack;
+  background-color: $txtAndDarkBack;
 }
 .footer {
   display: grid;
   grid-template-areas:
-    "getInTouch"
-    "hr1"
-    "agent"
-    "hr2"
-    "logo"
-    "hr3"
-    "copyRight";
+    'getInTouch'
+    'hr1'
+    'agent'
+    'hr2'
+    'logo'
+    'hr3'
+    'copyRight';
   align-items: center;
-  color: $BandSiteWhite;
+  color: $txtAndLightBack;
   padding: 5rem 2rem;
   @include tablet {
     grid-template-areas:
-      "getInTouch getInTouch logo"
-      "hr1 hr1 hr1 "
-      "agent agent agent"
-      "hr3 hr3 hr3"
-      "copyRight  copyRight copyRight";
+      'getInTouch getInTouch logo'
+      'hr1 hr1 hr1 '
+      'agent agent agent'
+      'hr3 hr3 hr3'
+      'copyRight  copyRight copyRight';
   }
   &__social {
     grid-area: getInTouch;

@@ -40,7 +40,7 @@ body {
   font-family: "Avenir";
   font-size: 1.6rem;
   font-weight: 400;
-  color: #000000;
+  color: #323232;
   transition: all 0.5s 0.5s ease-in-out;
 }
 
@@ -183,9 +183,9 @@ hr {
   display: flex;
   align-items: center;
 }
-@media screen and (min-width: 768px) {
+@media only screen and (max-device-width: 950px) and (orientation: landscape) {
   .hero {
-    height: 55vh;
+    height: 100vh;
   }
 }
 
