@@ -380,6 +380,10 @@ hr {
   margin-bottom: 2rem;
   font-size: 1rem;
 }
+.formSection__form--btn:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
 @media screen and (min-width: 768px) {
   .formSection__form--btn {
     font-size: 1.2rem;

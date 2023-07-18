@@ -61,6 +61,7 @@ concertContainer.appendChild(rowTitle);
 //function for create comment from API data---
 function createConcertData(show) {
   let row = createElement('ul', ['shows__data--row']);
+  row.setAttribute('tabindex', '0');
   let mobileTitleDate = createElement('li', [
     'shows__data--row-title',
     'shows-mobile',
