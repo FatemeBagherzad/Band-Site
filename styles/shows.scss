@@ -18,9 +18,12 @@
   &__content {
     display: grid;
     gap: 3rem;
-    grid-template-columns: 10fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     align-items: center;
+    @include tablet {
+      grid-template-columns: 2fr 1fr;
+    }
     @include desktop {
       grid-template-columns: 1fr 1fr;
     }
@@ -28,18 +31,21 @@
       grid-column: 1;
       grid-row: 1;
       &-subHeader {
-        font-size: 4rem;
+        font-size: 1.4rem;
         font-weight: 500;
         margin-bottom: 4rem;
+        @include tablet {
+          font-size: 2.4rem;
+        }
       }
     }
     &--soundTrack {
       border-radius: 5px;
       grid-column: 1;
       grid-row: 2;
-      @include tablet {
-        width: 50%;
-      }
+      width: 100%;
+      margin: auto;
+
       @include desktop {
         grid-column: 2;
         grid-row: 1;
@@ -51,116 +57,100 @@
 }
 
 //*************************
-//SHOW Section- SHOW page
+//SHOW Section UL- SHOW page
 //*************************
-#tabletDesktopTable {
-  display: none;
-  @include tablet {
-    display: table;
-  }
-}
-
-#mobileTable {
+.shows-mobile {
   @include tablet {
     display: none;
   }
 }
-.tabletitlehidden {
-  visibility: hidden;
-  width: 15%;
-}
-.tableLayout {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
+#shows-desktop {
+  display: none;
+  @include tablet {
+    display: grid;
+  }
 }
 .shows {
-  @include tablet {
-    padding-bottom: 10rem;
-  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6rem;
+
   @include desktop {
     display: flex;
+    flex-direction: row;
     gap: 10rem;
     justify-content: space-between;
-    align-items: flex-start;
   }
   &__header {
-    grid-area: header2;
-    font-size: 6rem;
+    font-size: 2.8rem;
     font-weight: 600;
-    margin: 10rem 0 4rem 0;
+    margin: 8rem 0 4rem 0;
     color: $txtAndDarkBack;
     @include tablet {
+      font-size: 4.5rem;
+    }
+  }
+
+  &__data {
+    width: 100%;
+    font-family: 'Avenir';
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: $txtAndDarkBack;
+    display: flex;
+    flex-direction: column;
+    @include desktop {
       margin-top: 10rem;
     }
-  }
-  &__tableWrapper {
-    width: 100%;
-  }
-  &__table {
-    width: 100%;
-    text-align: left;
-    margin: 4.2rem 0 2rem 0;
-    &--border {
+    &--row {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
       @include tablet {
-        line-height: 3;
-        border-bottom: 3px solid $Lines;
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1.2fr 1.2fr;
+        grid-template-rows: 1fr;
+        align-items: center;
       }
-    }
-    &--title {
-      color: $SecondryTxt;
-      font-weight: 600;
-      font-size: 2rem;
-      padding-top: 3rem;
-      @include tablet {
-        font-size: 2.4rem;
-        padding: 3rem 0 2rem 0;
+      &-btn {
+        width: 100%;
+        background-color: $txtAndDarkBack;
+        color: $txtAndLightBack;
+        padding: 2rem 5rem;
+        border-radius: 1rem;
+        font-size: 1.8rem;
+        margin: 3rem 0 1rem 0;
+        @include tablet {
+          margin: 0;
+          padding: 1.2rem 3rem;
+          border-radius: 1.2rem;
+        }
+        @include desktop {
+          padding: 1.2rem 5rem;
+        }
       }
-      @include desktop {
-        padding: 10rem 0 5rem 0;
-      }
-    }
-    &--item {
-      font-family: 'Avenir';
-      font-size: 3rem;
-      font-weight: 500;
-      padding-top: 1rem;
-      color: $txtAndDarkBack;
       &-boldItem {
         font-weight: 900;
       }
-      @include tablet {
-        font-size: 2.2rem;
-      }
-    }
-    &--btn {
-      width: 100%;
-      background-color: $txtAndDarkBack;
-      color: $txtAndLightBack;
-      padding: 2rem 5rem;
-      border-radius: 1rem;
-      font-size: 3rem;
-      margin: 3rem 0 1rem 0;
-      @include tablet {
-        margin: 1rem auto;
-        width: fit-content;
-        padding: 1.2rem 3rem;
-        border-radius: 1.2rem;
-        font-size: 1.8rem;
-      }
-      @include desktop {
-        padding: 1.2rem 5rem;
+      &-title {
+        color: $SecondryTxt;
+        font-weight: 600;
+        margin-top: 2rem;
+        @include tablet {
+          margin-top: 0;
+          margin-bottom: 3rem;
+        }
+        &-btn {
+          visibility: hidden;
+        }
       }
     }
 
     &--hr {
       margin: 2rem 0;
+      border: 2px solid $Lines;
+
       width: 100%;
-      @include tablet {
-        display: none;
-      }
     }
   }
 }

@@ -27,18 +27,13 @@
 }
 
 html {
-  font-size: 50%;
+  font-size: 62.5%;
   overflow-x: hidden;
-}
-@media screen and (min-width: 768px) {
-  html {
-    font-size: 62.5%;
-  }
 }
 
 body {
   font-family: "Avenir";
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: #323232;
   transition: all 0.5s 0.5s ease-in-out;
@@ -93,11 +88,16 @@ hr {
 }
 
 .sectionHeader {
-  font-size: 5rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  padding: 8rem 0 4rem 0;
+  margin: 8rem 0 4rem 0;
   width: 100%;
   color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .sectionHeader {
+    font-size: 3.6rem;
+  }
 }
 
 .BackgroundHeader {
@@ -127,7 +127,7 @@ hr {
 }
 .header__logo {
   grid-area: logo;
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 300;
   padding-top: 2rem;
 }
@@ -145,7 +145,7 @@ hr {
   gap: 2rem;
   justify-items: center;
   align-items: center;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 @media screen and (min-width: 768px) {
   .header__menu {
@@ -178,7 +178,7 @@ hr {
   width: 100vw;
   height: 50vh;
   color: #ffffff;
-  font-size: 6rem;
+  font-size: 3.2rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -186,6 +186,11 @@ hr {
 @media only screen and (max-device-width: 950px) and (orientation: landscape) {
   .hero {
     height: 100vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    font-size: 6rem;
   }
 }
 
@@ -202,7 +207,6 @@ hr {
 @media screen and (min-width: 768px) {
   .aboutMusicion {
     grid-template-areas: "header2 header2" "image image" "imgcaption imgcaption" "header3 header3" "introColumn1 introColumn2";
-    padding: 0 10rem;
   }
 }
 .aboutMusicion__header2 {
@@ -219,28 +223,41 @@ hr {
 }
 .aboutMusicion__imgcaption {
   grid-area: imgcaption;
-  font-size: 2.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.5;
   padding: 2.4rem 0 4.2rem 0;
 }
+@media screen and (min-width: 768px) {
+  .aboutMusicion__imgcaption {
+    font-size: 2.4rem;
+  }
+}
 .aboutMusicion__header3 {
   grid-area: header3;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   line-height: 2;
 }
+@media screen and (min-width: 768px) {
+  .aboutMusicion__header3 {
+    font-size: 2.4rem;
+  }
+}
 .aboutMusicion__intro {
   grid-area: introColumn1;
-  font-size: 1.8rem;
-  font-weight: 300;
-  line-height: 1.5;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.8;
   padding: 1.6rem 0 2.4rem 0;
 }
 @media screen and (min-width: 768px) {
   .aboutMusicion__intro {
     display: flex;
     gap: 3rem;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2.2;
   }
 }
 
@@ -317,6 +334,7 @@ hr {
 .formSection__img {
   width: 6rem;
   border-radius: 50%;
+  color: #ffffff;
   align-self: start;
   margin-top: 2rem;
 }
@@ -327,11 +345,16 @@ hr {
   align-items: flex-start;
   width: 100%;
   gap: 0.5rem;
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .formSection__form {
+    font-size: 1.2rem;
+  }
 }
 .formSection__form--label {
   color: #e1e1e1;
   font-weight: 600;
-  font-size: 1.4rem;
 }
 .formSection__form--input {
   width: 100%;
@@ -341,7 +364,6 @@ hr {
   border: 2px solid #e1e1e1;
   border-radius: 4px;
   font-family: inherit;
-  font-size: 1.4rem;
 }
 .formSection__form--input:hover, .formSection__form--input:active {
   border: 2px solid #323232;
@@ -355,10 +377,12 @@ hr {
   width: 100%;
   padding: 1.2rem 5rem;
   border-radius: 4px;
-  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
 }
 @media screen and (min-width: 768px) {
   .formSection__form--btn {
+    font-size: 1.2rem;
     width: auto;
     align-self: flex-end;
   }
@@ -383,31 +407,41 @@ hr {
   }
 }
 .commentSection__header {
-  font-size: 4rem;
-  font-weight: 600;
   width: 100%;
   justify-self: flex-start;
-  padding: 8rem 0 4rem 0;
 }
 
 .comment {
   display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
   color: #323232;
   width: 100%;
   margin: auto;
   gap: 2rem;
-  font-size: 2.2rem;
-  line-height: 3rem;
+  font-size: 1.8rem;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  .comment {
+    font-size: 2.2rem;
+    line-height: 1.5;
+  }
 }
 @media screen and (max-width: 400px) {
   .comment {
     flex-direction: column;
   }
 }
+.comment__imgTxtContainer {
+  display: flex;
+  gap: 2rem;
+  margin: auto;
+  width: 100%;
+}
 .comment__hr {
-  margin: 4rem 0;
+  margin: 0 0 3rem 0;
   width: 100%;
 }
 .comment__img {
@@ -433,6 +467,35 @@ hr {
 .comment__TxtWrapper--userInfo--p {
   font-weight: 500;
 }
+.comment__likeIcon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 3rem;
+  border-top: 1.7px solid #e1e1e1;
+  padding: 0.5rem;
+}
+.comment__likeIcon-like, .comment__likeIcon-dislike {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.comment__likeIcon-like:hover, .comment__likeIcon-dislike:hover {
+  background-color: #646464;
+  cursor: pointer;
+}
+.comment__likeIcon-like:hover .comment__likeIcon-svg, .comment__likeIcon-dislike:hover .comment__likeIcon-svg {
+  stroke: white;
+}
+.comment__likeIcon-svg {
+  fill: none;
+  stroke-width: 1.5px;
+  stroke: #ccc;
+  width: 4rem;
+  height: 4rem;
+}
 
 .BackgroundFooter {
   background-color: #323232;
@@ -452,11 +515,12 @@ hr {
 }
 .footer__social {
   grid-area: getInTouch;
-  font-size: 4rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .footer__social {
+    font-size: 3.6rem;
     display: flex;
     justify-content: flex-start;
     align-content: center;
@@ -486,7 +550,7 @@ hr {
   }
 }
 .footer__agents--agent {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -494,7 +558,7 @@ hr {
 }
 .footer__agents--agent-name {
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
 }
 .footer__hr2 {
   grid-area: hr2;
@@ -506,11 +570,12 @@ hr {
 }
 .footer__logo {
   grid-area: logo;
-  font-size: 3rem;
+  font-size: 1.4rem;
   padding: 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .footer__logo {
+    font-size: 2.4rem;
     display: flex;
     justify-content: flex-end;
   }

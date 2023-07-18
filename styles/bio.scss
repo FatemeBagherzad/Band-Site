@@ -12,16 +12,12 @@
   text-decoration: none;
 }
 html {
-  font-size: 50%;
-
+  font-size: 62.5%;
   overflow-x: hidden;
-  @include tablet {
-    font-size: 62.5%;
-  }
 }
 body {
   font-family: 'Avenir';
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: $txtAndDarkBack;
   transition: all 0.5s 0.5s ease-in-out;
@@ -66,11 +62,14 @@ hr {
   font-weight: 600;
 }
 .sectionHeader {
-  font-size: 5rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  padding: 8rem 0 4rem 0;
+  margin: 8rem 0 4rem 0;
   width: 100%;
   color: $txtAndDarkBack;
+  @include tablet {
+    font-size: 3.6rem;
+  }
 }
 //********************
 //header
@@ -96,7 +95,7 @@ hr {
   }
   &__logo {
     grid-area: logo;
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 300;
     padding-top: 2rem;
     @include tablet {
@@ -112,7 +111,7 @@ hr {
     gap: 2rem;
     justify-items: center;
     align-items: center;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     @include tablet {
       width: auto;
     }
@@ -150,18 +149,17 @@ hr {
 .hero {
   width: 100vw;
   height: 50vh;
-  // @include tablet {
-  //   height: 55vh;
-  // }
   @include deviceLandscape {
     height: 100vh;
   }
-
   color: $txtAndLightBack;
-  font-size: 6rem;
+  font-size: 3.2rem;
   font-weight: 600;
   display: flex;
   align-items: center;
+  @include tablet {
+    font-size: 6rem;
+  }
 }
 
 //********************
@@ -188,7 +186,6 @@ hr {
       'imgcaption imgcaption'
       'header3 header3'
       'introColumn1 introColumn2';
-    padding: 0 10rem;
   }
   &__header2 {
     grid-area: header2;
@@ -202,26 +199,35 @@ hr {
   }
   &__imgcaption {
     grid-area: imgcaption;
-    font-size: 2.8rem;
+    font-size: 1.4rem;
     font-weight: 600;
     line-height: 1.5;
     padding: 2.4rem 0 4.2rem 0;
+    @include tablet {
+      font-size: 2.4rem;
+    }
   }
   &__header3 {
     grid-area: header3;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 2;
+    @include tablet {
+      font-size: 2.4rem;
+    }
   }
   &__intro {
     grid-area: introColumn1;
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 1.5;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.8;
     padding: 1.6rem 0 2.4rem 0;
     @include tablet {
       display: flex;
       gap: 3rem;
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 2.2;
     }
   }
 }
@@ -293,6 +299,7 @@ hr {
   &__img {
     width: 6rem;
     border-radius: 50%;
+    color: $txtAndLightBack;
     align-self: start;
     margin-top: 2rem;
   }
@@ -303,10 +310,13 @@ hr {
     align-items: flex-start;
     width: 100%;
     gap: 0.5rem;
+    font-size: 1rem;
+    @include tablet {
+      font-size: 1.2rem;
+    }
     &--label {
       color: $Lines;
       font-weight: 600;
-      font-size: 1.4rem;
     }
     &--input {
       width: 100%;
@@ -316,7 +326,7 @@ hr {
       border: 2px solid $Lines;
       border-radius: 4px;
       font-family: inherit;
-      font-size: 1.4rem;
+
       &:hover,
       &:active {
         border: 2px solid $txtAndDarkBack;
@@ -331,8 +341,10 @@ hr {
       width: 100%;
       padding: 1.2rem 5rem;
       border-radius: 4px;
-      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
       @include tablet {
+        font-size: 1.2rem;
         width: auto;
         align-self: flex-end;
       }
@@ -357,28 +369,36 @@ hr {
     width: 60%;
   }
   &__header {
-    font-size: 4rem;
-    font-weight: 600;
     width: 100%;
     justify-self: flex-start;
-    padding: 8rem 0 4rem 0;
   }
 }
 .comment {
   display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
   color: $txtAndDarkBack;
   width: 100%;
   margin: auto;
   gap: 2rem;
-  font-size: 2.2rem;
-  line-height: 3rem;
+  font-size: 1.8rem;
+  line-height: 2;
+  @include tablet {
+    font-size: 2.2rem;
+    line-height: 1.5;
+  }
   @include smallScreen {
     flex-direction: column;
   }
+  &__imgTxtContainer {
+    display: flex;
+    gap: 2rem;
+    margin: auto;
+    width: 100%;
+  }
   &__hr {
-    margin: 4rem 0;
+    margin: 0 0 3rem 0;
     width: 100%;
   }
   &__img {
@@ -402,6 +422,37 @@ hr {
       &--p {
         font-weight: 500;
       }
+    }
+  }
+  &__likeIcon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 3rem;
+    border-top: 1.7px solid $Lines;
+    padding: 0.5rem;
+    // background-color: rgb(57, 57, 57);
+    &-like,
+    &-dislike {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      border-radius: 0.5rem;
+      &:hover {
+        background-color: #646464;
+        cursor: pointer;
+        .comment__likeIcon-svg {
+          stroke: white;
+        }
+      }
+    }
+    &-svg {
+      fill: none;
+      stroke-width: 1.5px;
+      stroke: #ccc;
+      width: 4rem;
+      height: 4rem;
     }
   }
 }
@@ -435,9 +486,10 @@ hr {
   }
   &__social {
     grid-area: getInTouch;
-    font-size: 4rem;
+    font-size: 2.4rem;
     font-weight: 600;
     @include tablet {
+      font-size: 3.6rem;
       display: flex;
       justify-content: flex-start;
       align-content: center;
@@ -464,14 +516,14 @@ hr {
       gap: 4rem;
     }
     &--agent {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
       padding: 2rem 0;
       &-name {
         font-weight: 600;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
       }
     }
   }
@@ -483,9 +535,10 @@ hr {
   }
   &__logo {
     grid-area: logo;
-    font-size: 3rem;
+    font-size: 1.4rem;
     padding: 1rem 0;
     @include tablet {
+      font-size: 2.4rem;
       display: flex;
       justify-content: flex-end;
     }
