@@ -57,7 +57,9 @@ function deleteComments(id) {
         '/?api_key=' +
         apiKey
     )
-    .then(() => {
+    .then((result) => {
+      console.log(result.data);
+
       // commentSection.innerHTML = '';
       clearChildren(commentSection);
       getComments();

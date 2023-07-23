@@ -39,16 +39,16 @@ a {
   padding: 0;
 }
 .container {
-  width: 100vw;
-  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2.4rem 0 2.4rem;
+  // width: 100vw;
+  max-width: 70rem;
   @include tablet {
     max-width: 78rem;
   }
   @include desktop {
     max-width: 128rem;
   }
-  margin: 0 auto;
-  padding: 0 2.4rem 0 2.4rem;
 }
 .Background {
   background-color: $txtAndDarkBack;
@@ -146,6 +146,9 @@ hr {
   background-position: center;
   background-repeat: no-repeat;
 }
+.heroWrapper {
+  width: 100%;
+}
 .hero {
   width: 100vw;
   height: 50vh;
@@ -156,9 +159,13 @@ hr {
   font-size: 3.2rem;
   font-weight: 600;
   display: flex;
+  flex-direction: row;
   align-items: center;
   @include tablet {
     font-size: 6rem;
+  }
+  &_header {
+    width: 100%;
   }
 }
 
@@ -177,7 +184,6 @@ hr {
     'header3 header3'
     'introColumn1 introColumn1';
   align-items: center;
-  line-height: 1.5;
 
   @include tablet {
     grid-template-areas:
@@ -186,13 +192,9 @@ hr {
       'imgcaption imgcaption'
       'header3 header3'
       'introColumn1 introColumn2';
+    padding: 0 10rem 5rem 10rem;
   }
-  &__header2 {
-    grid-area: header2;
-    @include tablet {
-      margin-left: -6rem;
-    }
-  }
+
   &__img {
     grid-area: image;
     width: 100%;
@@ -220,14 +222,14 @@ hr {
     grid-area: introColumn1;
     font-size: 1.6rem;
     font-weight: 400;
-    line-height: 1.8;
+    line-height: 2;
     padding: 1.6rem 0 2.4rem 0;
     @include tablet {
       display: flex;
       gap: 3rem;
       font-size: 2rem;
       font-weight: 500;
-      line-height: 2.2;
+      line-height: 1.5;
     }
   }
 }

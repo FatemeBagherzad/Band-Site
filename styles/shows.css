@@ -25,6 +25,9 @@
   background-position: top;
   background-repeat: no-repeat;
 }
+.heroShow__header {
+  font-size: 4.5rem;
+}
 .heroShow__content {
   display: grid;
   gap: 3rem;
@@ -60,8 +63,13 @@
   border-radius: 5px;
   grid-column: 1;
   grid-row: 2;
-  width: 100%;
+  width: 80vw;
   margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .heroShow__content--soundTrack {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1280px) {
   .heroShow__content--soundTrack {
