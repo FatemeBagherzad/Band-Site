@@ -1,6 +1,6 @@
-@use "./partials/fonts" as *;
-@use "./partials/variables" as *;
-@use "./partials/mixins" as *;
+@use './partials/fonts' as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
 
 //********************
 //reset
@@ -12,18 +12,14 @@
   text-decoration: none;
 }
 html {
-  font-size: 50%;
-
+  font-size: 62.5%;
   overflow-x: hidden;
-  @include tablet {
-    font-size: 62.5%;
-  }
 }
 body {
-  font-family: "Avenir";
-  font-size: 1.6rem;
+  font-family: 'Avenir';
+  font-size: 1.3rem;
   font-weight: 400;
-  color: $Darkblack;
+  color: $txtAndDarkBack;
   transition: all 0.5s 0.5s ease-in-out;
 }
 h1,
@@ -43,60 +39,63 @@ a {
   padding: 0;
 }
 .container {
-  width: 100vw;
-  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2.4rem 0 2.4rem;
+  // width: 100vw;
+  max-width: 70rem;
   @include tablet {
     max-width: 78rem;
   }
   @include desktop {
     max-width: 128rem;
   }
-  margin: 0 auto;
-  padding: 0 2.4rem 0 2.4rem;
 }
 .Background {
-  background-color: $BandSiteBlack;
+  background-color: $txtAndDarkBack;
 }
 
 hr {
-  border: 1px solid $Mercury;
+  border: 1px solid $Lines;
 }
 .activeState {
-  border-bottom: 5px solid $BandSiteWhite;
+  border-bottom: 5px solid $txtAndLightBack;
   font-weight: 600;
 }
 .sectionHeader {
-  font-size: 5rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  padding: 8rem 0 4rem 0;
+  margin: 8rem 0 4rem 0;
   width: 100%;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
+  @include tablet {
+    font-size: 3.6rem;
+  }
 }
 //********************
 //header
 //********************
 .BackgroundHeader {
-  background-color: $BandSiteBlack;
+  background-color: $txtAndDarkBack;
 }
 .header {
-  color: $Alabaster;
+  color: $SecondryLightBack;
   display: grid;
-  grid-template-areas: "logo" "menu";
+  grid-template-areas: 'logo' 'menu';
   justify-items: center;
   align-items: center;
   @include tablet {
-    grid-template-areas: "logo menu menu menu";
+    grid-template-areas: 'logo menu menu menu';
     justify-items: flex-start;
     height: 8rem;
   }
   @include desktop {
-    grid-template-areas: "logo menu menu menu . . . ";
+    grid-template-areas: 'logo menu menu menu . . . ';
     justify-items: flex-start;
     height: 8rem;
   }
   &__logo {
     grid-area: logo;
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 300;
     padding-top: 2rem;
     @include tablet {
@@ -104,7 +103,7 @@ hr {
     }
   }
   &__menu {
-    color: $Alabaster;
+    color: $SecondryLightBack;
     grid-area: menu;
     width: 100%;
     display: grid;
@@ -112,7 +111,7 @@ hr {
     gap: 2rem;
     justify-items: center;
     align-items: center;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     @include tablet {
       width: auto;
     }
@@ -125,8 +124,8 @@ hr {
         justify-content: center;
         &:hover,
         &:active {
-          border-bottom: 5px solid $BandSiteWhite;
-          color: $BandSiteWhite;
+          border-bottom: 5px solid $txtAndLightBack;
+          color: $txtAndLightBack;
           font-weight: 600;
         }
       }
@@ -147,78 +146,90 @@ hr {
   background-position: center;
   background-repeat: no-repeat;
 }
+.heroWrapper {
+  width: 100%;
+}
 .hero {
   width: 100vw;
   height: 50vh;
-  @include tablet {
-    height: 55vh;
+  @include deviceLandscape {
+    height: 100vh;
   }
-
-  color: $BandSiteWhite;
-  font-size: 6rem;
+  color: $txtAndLightBack;
+  font-size: 3.2rem;
   font-weight: 600;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  @include tablet {
+    font-size: 6rem;
+  }
+  &_header {
+    width: 100%;
+  }
 }
 
 //********************
 //about Musition
 //********************
 .BackgroundAbout {
-  background-color: $BandSiteWhite;
+  background-color: $txtAndLightBack;
 }
 .aboutMusicion {
   display: grid;
   grid-template-areas:
-    "header2 header2"
-    "image image"
-    "imgcaption imgcaption"
-    "header3 header3"
-    "introColumn1 introColumn1";
+    'header2 header2'
+    'image image'
+    'imgcaption imgcaption'
+    'header3 header3'
+    'introColumn1 introColumn1';
   align-items: center;
-  line-height: 1.5;
 
   @include tablet {
     grid-template-areas:
-      "header2 header2"
-      "image image"
-      "imgcaption imgcaption"
-      "header3 header3"
-      "introColumn1 introColumn2";
-    padding: 0 10rem;
+      'header2 header2'
+      'image image'
+      'imgcaption imgcaption'
+      'header3 header3'
+      'introColumn1 introColumn2';
+    padding: 0 10rem 5rem 10rem;
   }
-  &__header2 {
-    grid-area: header2;
-    @include tablet {
-      margin-left: -6rem;
-    }
-  }
+
   &__img {
     grid-area: image;
     width: 100%;
   }
   &__imgcaption {
     grid-area: imgcaption;
-    font-size: 2.8rem;
+    font-size: 1.4rem;
     font-weight: 600;
     line-height: 1.5;
     padding: 2.4rem 0 4.2rem 0;
+    @include tablet {
+      font-size: 2.4rem;
+    }
   }
   &__header3 {
     grid-area: header3;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 2;
+    @include tablet {
+      font-size: 2.4rem;
+    }
   }
   &__intro {
     grid-area: introColumn1;
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 1.5;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2;
     padding: 1.6rem 0 2.4rem 0;
     @include tablet {
       display: flex;
       gap: 3rem;
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1.5;
     }
   }
 }
@@ -227,14 +238,14 @@ hr {
 //Gallery
 //********************
 .BackgroundGallery {
-  background-color: $Alabaster;
+  background-color: $SecondryLightBack;
 }
 .gallery {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
   &__header {
     justify-self: flex-start;
   }
@@ -258,14 +269,14 @@ hr {
 //CommentForm Section
 //********************
 .BackgroundComment {
-  background-color: $BandSiteWhite;
+  background-color: $txtAndLightBack;
 }
 .commentAndFormSection {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
   width: 100%;
   &__header {
     justify-self: flex-start;
@@ -290,6 +301,7 @@ hr {
   &__img {
     width: 6rem;
     border-radius: 50%;
+    color: $txtAndLightBack;
     align-self: start;
     margin-top: 2rem;
   }
@@ -300,36 +312,45 @@ hr {
     align-items: flex-start;
     width: 100%;
     gap: 0.5rem;
+    font-size: 1rem;
+    @include tablet {
+      font-size: 1.2rem;
+    }
     &--label {
-      color: $Mercury;
+      color: $Lines;
       font-weight: 600;
-      font-size: 1.4rem;
     }
     &--input {
       width: 100%;
       padding: 1.2rem;
       margin-bottom: 3rem;
-      background-color: $Alabaster;
-      border: 2px solid $Mercury;
+      background-color: $SecondryLightBack;
+      border: 2px solid $Lines;
       border-radius: 4px;
       font-family: inherit;
-      font-size: 1.4rem;
+
       &:hover,
       &:active {
-        border: 2px solid $BandSiteBlack;
+        border: 2px solid $txtAndDarkBack;
       }
     }
     &--textArea {
       height: 15rem;
     }
     &--btn {
-      background-color: $BandSiteBlack;
-      color: $BandSiteWhite;
+      background-color: $txtAndDarkBack;
+      color: $txtAndLightBack;
       width: 100%;
       padding: 1.2rem 5rem;
       border-radius: 4px;
-      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      &:hover {
+        cursor: pointer;
+        font-weight: 600;
+      }
       @include tablet {
+        font-size: 1.2rem;
         width: auto;
         align-self: flex-end;
       }
@@ -345,7 +366,7 @@ hr {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
   width: 100%;
   @include tablet {
     width: 90%;
@@ -354,32 +375,42 @@ hr {
     width: 60%;
   }
   &__header {
-    font-size: 4rem;
-    font-weight: 600;
     width: 100%;
     justify-self: flex-start;
-    padding: 8rem 0 4rem 0;
   }
 }
 .comment {
   display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
-  color: $BandSiteBlack;
+  color: $txtAndDarkBack;
   width: 100%;
   margin: auto;
-  gap: 2rem;
-  font-size: 2.2rem;
-  line-height: 3rem;
+  // gap: 1rem;
+  font-size: 1.8rem;
+  line-height: 2;
+  @include tablet {
+    font-size: 2.2rem;
+    line-height: 1.5;
+  }
   @include smallScreen {
     flex-direction: column;
   }
+  &__imgTxtContainer {
+    display: flex;
+    gap: 2rem;
+    margin: auto;
+    width: 100%;
+  }
   &__hr {
-    margin: 4rem 0;
+    margin: 0 0 3rem 0;
     width: 100%;
   }
   &__img {
+    background-color: $Lines;
     width: 6rem;
+    height: 6rem;
     border-radius: 50%;
     align-self: flex-start;
   }
@@ -394,47 +425,134 @@ hr {
       font-weight: 600;
       margin-bottom: 1.6rem;
       &-date {
-        color: $Mercury;
+        color: $Lines;
       }
       &--p {
         font-weight: 500;
       }
     }
   }
-}
+  &__likeCounter {
+    align-self: start;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: $SecondryTxt;
+    &-heart {
+      opacity: 0.3;
+    }
+  }
+  &__commentIcons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    border-top: 0.3rem solid $Lines;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    color: $SecondryTxt;
+    @include tablet {
+      padding: 0 1rem 0 2rem;
+    }
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      padding: 0.7rem 0.5rem;
+      @include tablet {
+        padding: 0.7rem 2rem;
+      }
+      border-radius: 0.5rem;
+      &:hover {
+        cursor: pointer;
+        background-color: $Lines;
+      }
+    }
+    &-icon {
+      width: 4rem;
+      margin-right: 0.7rem;
+    }
+  }
+  &__more {
+    font-size: 1.5;
+    color: $SecondryTxt;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 20rem;
+    height: 18rem;
+    padding: 2rem 1rem;
+    background-color: $txtAndLightBack;
+    border: 1px solid $SecondryTxt;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 5rem;
+    right: 0;
+    box-shadow: 0px 0.5rem 1rem 0px rgba(62, 62, 62, 0.2);
+    z-index: 999;
 
+    &-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0.2rem;
+      border-radius: 0.5rem;
+      &:hover {
+        cursor: pointer;
+        background-color: $Lines;
+      }
+    }
+  }
+}
+#repostm {
+  display: none;
+  @include tablet {
+    display: flex;
+  }
+}
+#repost {
+  @include tablet {
+    display: none;
+  }
+}
+.actOnComment {
+  display: none;
+}
 //********************
 //Footer
 //********************
 .BackgroundFooter {
-  background-color: $BandSiteBlack;
+  background-color: $txtAndDarkBack;
 }
 .footer {
   display: grid;
   grid-template-areas:
-    "getInTouch"
-    "hr1"
-    "agent"
-    "hr2"
-    "logo"
-    "hr3"
-    "copyRight";
+    'getInTouch'
+    'hr1'
+    'agent'
+    'hr2'
+    'logo'
+    'hr3'
+    'copyRight';
   align-items: center;
-  color: $BandSiteWhite;
+  color: $txtAndLightBack;
   padding: 5rem 2rem;
   @include tablet {
     grid-template-areas:
-      "getInTouch getInTouch logo"
-      "hr1 hr1 hr1 "
-      "agent agent agent"
-      "hr3 hr3 hr3"
-      "copyRight  copyRight copyRight";
+      'getInTouch getInTouch logo'
+      'hr1 hr1 hr1 '
+      'agent agent agent'
+      'hr3 hr3 hr3'
+      'copyRight  copyRight copyRight';
   }
   &__social {
     grid-area: getInTouch;
-    font-size: 4rem;
+    font-size: 2.4rem;
     font-weight: 600;
     @include tablet {
+      font-size: 3.6rem;
       display: flex;
       justify-content: flex-start;
       align-content: center;
@@ -461,14 +579,14 @@ hr {
       gap: 4rem;
     }
     &--agent {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
       padding: 2rem 0;
       &-name {
         font-weight: 600;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
       }
     }
   }
@@ -480,9 +598,10 @@ hr {
   }
   &__logo {
     grid-area: logo;
-    font-size: 3rem;
+    font-size: 1.4rem;
     padding: 1rem 0;
     @include tablet {
+      font-size: 2.4rem;
       display: flex;
       justify-content: flex-end;
     }

@@ -13,7 +13,7 @@
 
   <body>
     <header class="BackgroundHeader">
-      <header class="header container">
+      <div class="header container">
         <a href="./index.html" class="header__logo">BANDSITE</a>
 
         <ul class="header__menu">
@@ -28,18 +28,21 @@
             </div>
           </li>
         </ul>
-      </header>
+      </div>
     </header>
 
     <div class="hero heroBio">
-      <h1 class="Hero__header container">The Bees Knees</h1>
+      <div class="heroWrapper container">
+        <h1 class="Hero__header">The Bees Knees</h1>
+      </div>
     </div>
 
     <section class="BackgroundAbout" id="aboutMusicion">
-      <section class="aboutMusicion container">
-        <h2 class="aboutMusicion__header2 sectionHeader">
-          About The Musicions
-        </h2>
+      <div class="container">
+        <h2 class="sectionHeader">About The Musicions</h2>
+      </div>
+
+      <div class="container aboutMusicion">
         <img
           src="./assets/images/band.jpg"
           alt="Music Concert"
@@ -75,73 +78,64 @@
             looking to be released in late 2021.
           </p>
         </div>
-      </section>
+      </div>
     </section>
 
     <section class="BackgroundGallery" id="Gallery">
-      <setion class="gallery container">
+      <div class="gallery container">
         <h2 class="gallery__header sectionHeader">Photo Gallery</h2>
         <div class="gallery__images">
           <img
             src="./assets/images/Photo-gallery-1.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-2.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-3.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-4.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-5.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-6.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-7.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-8.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
           <img
             src="./assets/images/Photo-gallery-9.jpg"
             alt="Music Concert"
             class="gallery__images--img"
-            \
           />
         </div>
-      </setion>
+      </div>
     </section>
 
     <section class="BackgroundComment">
-      <section class="container commentAndFormSection">
+      <div class="container commentAndFormSection">
         <h2 class="commentSection__header sectionHeader">
           Join the conversation
         </h2>
@@ -167,7 +161,6 @@
               >COMMENT</label
             >
             <textarea
-              type="text"
               id="comment"
               name="comment"
               placeholder="Add a new comment"
@@ -185,35 +178,90 @@
           <!-- ⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔ -->
           <!-- This part is left for having visual idea of comment sections -->
           <!-- <div class="comment">
-            <img
-              class="comment__img"
-              alt="peron image"
-              src="./assets/images/person1.jpg"
-            />
-            <div class="comment__TxtWrapper">
-              <div class="comment__TxtWrapper--userInfo">
-                <span class="comment__TxtWrapper--userInfo-userN"
-                  >Connor Walton</span
-                >
-                <span class="comment__TxtWrapper--userInfo-date"
-                  >02/17/2021</span
-                >
+            <div class="comment__imgTxtContainer">
+              <div class="comment__img"></div>
+
+              <div class="comment__TxtWrapper">
+                <div class="comment__TxtWrapper--userInfo">
+                  <span class="comment__TxtWrapper--userInfo-userN"
+                    >Connor Walton</span
+                  >
+                  <span class="comment__TxtWrapper--userInfo-date"
+                    >02/17/2021</span
+                  >
+                </div>
+                <p class="comment__TxtWrapper--p">
+                  This is art. This is inexplicable magic expressed in the
+                  purest way, everything that makes up this majestic work
+                  deserves reverence. Let us appreciate this for what it is and
+                  what it contains.
+                </p>
               </div>
-              <p class="comment__TxtWrapper--p">
-                This is art. This is inexplicable magic expressed in the purest
-                way, everything that makes up this majestic work deserves
-                reverence. Let us appreciate this for what it is and what it
-                contains.
-              </p>
             </div>
-          </div> 
-          <hr class="comment__hr" /> -->
+
+            <span class="comment__likeCounter"
+              ><span class="comment__likeCounter-heart">🤍</span
+              ><span> 0</span></span
+            >
+            <div class="comment__commentIcons">
+              <div class="comment__commentIcons-wrapper">
+                <img
+                  src="./assets/icons/SVG/comments2.png"
+                  class="comment__commentIcons-icon"
+                /><span>Comment</span>
+              </div>
+
+              <div class="comment__commentIcons-wrapper" id="repostm">
+                <img
+                  src="./assets/icons/SVG/repost.png"
+                  class="comment__commentIcons-icon"
+                /><span>Repost</span>
+              </div>
+
+              <div class="comment__commentIcons-wrapper like">
+                <img
+                  src="./assets/icons/SVG/like2.png"
+                  class="comment__commentIcons-icon"
+                /><span>Like</span>
+              </div>
+
+              <div class="comment__commentIcons-wrapper" id="dropUp">
+                <img
+                  src="./assets/icons/SVG/more.png"
+                  class="comment__commentIcons-icon"
+                />
+              </div>
+
+              <div class="comment__more container actOnComment">
+                <a class="comment__more-item">
+                  <img
+                    src="./assets/icons/SVG/delete.png"
+                    class="comment__commentIcons-icon"
+                  /><span> Delete post </span>
+                </a>
+                <a class="comment__more-item">
+                  <img
+                    src="./assets/icons/SVG/edit.png"
+                    class="comment__commentIcons-icon"
+                  /><span>Edit post</span>
+                </a>
+                <a class="comment__more-item" id="repost">
+                  <img
+                    src="./assets/icons/SVG/repost.png"
+                    class="comment__commentIcons-icon"
+                  /><span>Repost</span>
+                </a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <hr class="comment__hr" /> -->
         </div>
-      </section>
+      </div>
     </section>
 
     <footer class="BackgroundFooter">
-      <footer class="footer container">
+      <div class="footer container">
         <div class="footer__social">
           <h2 class="footer__social--header">Get in Touch</h2>
           <div class="footer__social--icons">
@@ -222,7 +270,6 @@
                 src="./assets/icons/SVG/Icon-instagram.svg"
                 alt="Instageram Icon"
                 class="footer__social--icons-icon"
-                \
               />
             </a>
 
@@ -231,7 +278,6 @@
                 src="./assets/icons/SVG/Icon-facebook.svg"
                 alt="Instageram Icon"
                 class="footer__social--icons-icon"
-                \
               />
             </a>
 
@@ -240,7 +286,6 @@
                 src="./assets/icons/SVG/Icon-twitter.svg"
                 alt="Instageram Icon"
                 class="footer__social--icons-icon"
-                \
               />
             </a>
           </div>
@@ -255,7 +300,7 @@
             </h4>
             <p>503 Broadway Penthouse,<br />New York, NY 10012, USA</p>
             <p>
-              <a href="mailto: info@thebeesknees.com">info@thebeesknees.com</a>
+              <a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
             </p>
           </div>
 
@@ -265,7 +310,7 @@
             </h4>
             <p>Booking Agent for<br />US / South America / Japan</p>
             <p>
-              <a href="mailto: pearl.gregg@limitlessag.com"
+              <a href="mailto:pearl.gregg@limitlessag.com"
                 >pearl.gregg@limitlessag.com</a
               >
             </p>
@@ -277,7 +322,7 @@
             </h4>
             <p>Booking Agent for<br />UK / EU / AU</p>
             <p>
-              <a href="mailto: cwhyte@archentertainment.com"
+              <a href="mailto:cwhyte@archentertainment.com"
                 >cwhyte@archentertainment.com</a
               >
             </p>
@@ -295,9 +340,10 @@
         <div class="footer__copyRight">
           <p>Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </div>
-      </footer>
+      </div>
     </footer>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./scripts/index-page.js"></script>
   </body>
 </html>
