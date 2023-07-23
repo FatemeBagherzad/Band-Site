@@ -1,48 +1,207 @@
-const apiKey = 'f39c7a39-3ffc-45c2-9417-c37bd49c4aa7';
+'use strict';
+let commentSection = document.querySelector('.commentSection');
+
+//Function to clear parents--------------------------
+function clearChildren(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
+const apiKey = 'b30a6a19-fd69-4da0-b200-91a621e0bac7';
 let commentArr = [];
 
-function getComments() {
-  axios
+//Get Comments Function------------------------------
+const getComments = async function () {
+  await axios
     .get('https://project-1-api.herokuapp.com/comments?api_key=' + apiKey)
     .then((result) => {
       commentArr.push(...result.data);
-      for (i = 0; i < commentArr.length; i++) {
-        displayComment(commentArr[i]);
+      // for (let i = 0; i < result.data.length; i++) {
+      //   displayComment(result.data[i]);
+      // }
+      for (let i = result.data.length - 1; i > 0; i--) {
+        displayComment(result.data[i]);
       }
     })
     .catch((error) => {
       console.log(error);
     });
-}
+};
 getComments();
 
-//----------------------------------
+//Like Comment Function--------------------
+async function likeComment(id) {
+  await axios
+    .put(
+      'https://project-1-api.herokuapp.com/comments/' +
+        id +
+        '/like?api_key=' +
+        apiKey
+    )
+    .then((result) => {
+      clearChildren(commentSection);
+      // commentSection.innerHTML = '';
+      // commentArr = [];
+      getComments();
+    })
+    .catch((error) => console.log(error));
+}
 
-const commentArrImg = [
-  './assets/images/person1.jpg',
-  './assets/images/person2.jpg',
-  './assets/images/person3.jpg',
-  './assets/images/person4.jpg',
-  './assets/images/person5.jpg',
-];
+//Delete Comments Function
+function deleteComments(id) {
+  axios
+    .delete(
+      'https://project-1-api.herokuapp.com/comments/' +
+        id +
+        '/?api_key=' +
+        apiKey
+    )
+    .then(() => {
+      // commentSection.innerHTML = '';
+      clearChildren(commentSection);
+      getComments();
+    });
+}
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-//////////🟨Add comment by click🟨//////////////
-/////////////////////////////////////////////////
+//----------------------------------------
+
+const reactionOnComment = function (commentid) {
+  //create icon bar
+
+  const commentIcons = document.createElement('div');
+  commentIcons.classList.add('comment__commentIcons');
+  //create comment icon
+  const commentIconWrapper = document.createElement('div');
+  commentIconWrapper.classList.add('comment__commentIcons-wrapper');
+  // commentIconWrapper.addEventListener('click', function () {
+  //   console.log('Comment Deleted');
+  //   deleteComments(commentid);
+  // });
+
+  const commentIcon = document.createElement('img');
+  commentIcon.setAttribute('src', './assets/icons/SVG/comments2.png');
+  commentIcon.classList.add('comment__commentIcons-icon');
+  commentIconWrapper.appendChild(commentIcon);
+  const commentTxt = document.createElement('span');
+  commentTxt.innerText = 'Comment';
+  commentIconWrapper.appendChild(commentTxt);
+
+  //create repost icon
+  const repostIconWrapper = document.createElement('div');
+  repostIconWrapper.classList.add('comment__commentIcons-wrapper');
+  repostIconWrapper.setAttribute('id', 'repostm');
+  const reposttIcon = document.createElement('img');
+  reposttIcon.setAttribute('src', './assets/icons/SVG/repost.png');
+  reposttIcon.classList.add('comment__commentIcons-icon');
+  repostIconWrapper.appendChild(reposttIcon);
+  const repostTxt = document.createElement('span');
+  repostTxt.innerText = 'Repost';
+  repostIconWrapper.appendChild(repostTxt);
+  //create like icon
+  const likeIconWrapper = document.createElement('div');
+  likeIconWrapper.classList.add('comment__commentIcons-wrapper');
+  likeIconWrapper.classList.add('like');
+  likeIconWrapper.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log('Hi');
+    likeComment(commentid);
+  });
+
+  const likeIcon = document.createElement('img');
+  likeIcon.setAttribute('src', './assets/icons/SVG/like2.png');
+  likeIcon.classList.add('comment__commentIcons-icon');
+  likeIconWrapper.appendChild(likeIcon);
+  const likeTxt = document.createElement('span');
+  likeTxt.innerText = 'Like';
+  likeIconWrapper.appendChild(likeTxt);
+  //create more icon
+  const moreIconWrapper = document.createElement('div');
+  moreIconWrapper.classList.add('comment__commentIcons-wrapper');
+  // moreIconWrapper.setAttribute('id', 'dropUp');
+
+  const moreIcon = document.createElement('img');
+  moreIcon.setAttribute('src', './assets/icons/SVG/more.png');
+  moreIcon.classList.add('comment__commentIcons-icon');
+  moreIconWrapper.appendChild(moreIcon);
+
+  //create more menu
+  const dropDn = document.createElement('div');
+  dropDn.classList.add('comment__more');
+  dropDn.classList.add('container');
+  dropDn.classList.add('actOnComment');
+
+  //delet
+  const deleteLink = document.createElement('a');
+  deleteLink.classList.add('comment__more-item');
+  const deleteImg = document.createElement('img');
+  deleteImg.setAttribute('src', './assets/icons/SVG/delete.png');
+  deleteImg.classList.add('comment__commentIcons-icon');
+  deleteLink.appendChild(deleteImg);
+  const deleteTxt = document.createElement('span');
+  deleteTxt.innerText = 'Delete post';
+  deleteLink.addEventListener('click', function () {
+    console.log('Comment Deleted');
+    deleteComments(commentid);
+  });
+
+  deleteLink.appendChild(deleteTxt);
+
+  //Edit
+  const editLink = document.createElement('a');
+  editLink.classList.add('comment__more-item');
+  const editImg = document.createElement('img');
+  editImg.setAttribute('src', './assets/icons/SVG/edit.png');
+  editImg.classList.add('comment__commentIcons-icon');
+  editLink.appendChild(editImg);
+  const editTxt = document.createElement('span');
+  editTxt.innerText = 'Edit post';
+  editLink.appendChild(editTxt);
+
+  //repost
+  const repostLink = document.createElement('a');
+  repostLink.classList.add('comment__more-item');
+  repostLink.setAttribute('id', 'repost');
+  const repostImg = document.createElement('img');
+  repostImg.setAttribute('src', './assets/icons/SVG/repost.png');
+  repostImg.classList.add('comment__commentIcons-icon');
+  repostLink.appendChild(repostImg);
+  const repostTxt1 = document.createElement('span');
+  repostTxt1.innerText = 'Repost';
+  repostLink.appendChild(repostTxt1);
+
+  dropDn.appendChild(deleteLink);
+  dropDn.appendChild(editLink);
+  dropDn.appendChild(repostLink);
+
+  //menu
+  moreIconWrapper.addEventListener('click', function (event) {
+    event.preventDefault();
+    dropDn.classList.toggle('actOnComment');
+
+    console.log(moreIconWrapper);
+  });
+
+  commentIcons.appendChild(commentIconWrapper);
+  commentIcons.appendChild(repostIconWrapper);
+  commentIcons.appendChild(likeIconWrapper);
+  commentIcons.appendChild(moreIconWrapper);
+  commentIcons.appendChild(dropDn);
+
+  let returns = [commentIcons, likeIconWrapper, moreIconWrapper, dropDn];
+  return returns;
+};
+
 //add comment created by user to comment section by click
 const form = document.querySelector('.formSection');
-let commentSection = document.querySelector('.commentSection');
-
 form.addEventListener('submit', function (event) {
   event.preventDefault();
-  let userN = event.target.name.value;
 
-  //define current Date
+  let userN = event.target.name.value;
   let day = Math.round(Date.now());
   let commentVal = event.target.comment.value;
-  //removing all previous comments
   let element = document.getElementById('commentSection');
+
   //Alert for incompelete form
   if (!userN || !commentVal) {
     alert(`📣Please fill out all fields! `);
@@ -57,15 +216,8 @@ form.addEventListener('submit', function (event) {
       name: userN,
       comment: commentVal,
       timestamp: day,
+      likes: 0,
     };
-    //put new input in array and pop one fron end of
-    commentArr.unshift(newComment);
-    commentArr.pop();
-
-    for (i = 0; i < commentArr.length; i++) {
-      commentArr[i].imgSrc = commentArrImg[i];
-      displayComment(commentArr[i]);
-    }
 
     axios
       .post(
@@ -81,22 +233,28 @@ form.addEventListener('submit', function (event) {
         }
       )
       .then((response) => {
-        console.log(response);
+        // newComment.id = response.data.id;
+        console.log(response.data);
+        likeComment(response.data.id);
       })
       .catch((response) => {
         console.log(response);
       });
+
+    //put new input in array and pop one fron end of
+    commentArr.unshift(newComment);
+    commentArr.pop();
+
+    for (let i = 0; i < commentArr.length; i++) {
+      displayComment(commentArr[i]);
+    }
 
     document.getElementById('name').value = '';
     document.getElementById('comment').value = '';
   }
 });
 
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-///////////🟨make comment by function🟨//////////////
-//////////////////////////////////////////////////////
-//Function that take an object as parameter and make a comment section
+//Display Comments on page-----------------
 function displayComment(obj) {
   //creating main section
   let comment = document.createElement('div');
@@ -106,9 +264,8 @@ function displayComment(obj) {
   imgAndTxtContainer.classList.add('comment__imgTxtContainer');
 
   //adding image
-  let image = document.createElement('img');
+  let image = document.createElement('div');
   image.classList.add('comment__img');
-  image.src = commentArrImg[Math.trunc(Math.random() * 3)];
 
   //create div wrapper of name and date and p
   let commentTxtWrapper = document.createElement('div');
@@ -140,61 +297,20 @@ function displayComment(obj) {
   usercomment.classList.add('comment__TxtWrapper--p');
   usercomment.innerHTML = obj.comment;
 
-  //create like and dislke Button
-  /////////////////////////////////////////////////
-  /////////////////////////////////////////////////
-  //////////🧡create like SVG🧡//////////////////
-  /////////////////////////////////////////////////
-  //create likeAndDislikeConainer
+  let likeWrapper = document.createElement('span');
+  likeWrapper.classList.add('comment__likeCounter');
+  let heart = document.createElement('span');
+  heart.classList.add('comment__likeCounter-heart');
+  heart.innerHTML = '🤍';
+  let counterlike = document.createElement('span');
+  counterlike.innerText = obj.likes;
+  likeWrapper.appendChild(heart);
+  likeWrapper.appendChild(counterlike);
 
-  //1-create like SVG
-  let svgLike = document.createElement('svg'); //Get svg element
-  svgLike.setAttribute('viewBox', '0 0 24 24');
-  svgLike.classList.add('comment__likeIcon-svg');
-  let newElement = document.createElementNS(
-    'http://www.w3.org/2000/svg',
-    'path'
-  );
-  newElement.setAttribute(
-    'd',
-    'M7.5 15h2.25m8.024-9.75c.011.05.028.1.052.148.591 1.2.924 2.55.924 3.977a8.96 8.96 0 01-.999 4.125m.023-8.25c-.076-.365.183-.75.575-.75h.908c.889 0 1.713.518 1.972 1.368.339 1.11.521 2.287.521 3.507 0 1.553-.295 3.036-.831 4.398C20.613 14.547 19.833 15 19 15h-1.053c-.472 0-.745-.556-.5-.96a8.95 8.95 0 00.303-.54m.023-8.25H16.48a4.5 4.5 0 01-1.423-.23l-3.114-1.04a4.5 4.5 0 00-1.423-.23H6.504c-.618 0-1.217.247-1.605.729A11.95 11.95 0 002.25 12c0 .434.023.863.068 1.285C2.427 14.306 3.346 15 4.372 15h3.126c.618 0 .991.724.725 1.282A7.471 7.471 0 007.5 19.5a2.25 2.25 0 002.25 2.25.75.75 0 00.75-.75v-.633c0-.573.11-1.14.322-1.672.304-.76.93-1.33 1.653-1.715a9.04 9.04 0 002.86-2.4c.498-.634 1.226-1.08 2.032-1.08h.384'
-  );
-  svgLike.appendChild(newElement);
-  //2-create dislike SVG
-  let svgdisLike = document.createElement('svg'); //Get svg element
-  svgdisLike.setAttribute('viewBox', '0 0 24 24');
-  svgdisLike.classList.add('comment__likeIcon-svg');
-  let newElement1 = document.createElementNS(
-    'http://www.w3.org/2000/svg',
-    'path'
-  );
-  newElement1.setAttribute(
-    'd',
-    'M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z'
-  );
-  svgdisLike.appendChild(newElement1);
-  //3-create container of Like and Dislike
-  let likeAndDislikeConainer = document.createElement('div');
-  likeAndDislikeConainer.classList.add('comment__likeIcon');
-
-  let likeContainer = document.createElement('div');
-  likeContainer.classList.add('comment__likeIcon-like');
-
-  let dislikeContainer = document.createElement('div');
-  dislikeContainer.classList.add('comment__likeIcon-dislike');
-
-  likeAndDislikeConainer.appendChild(likeContainer);
-  likeContainer.appendChild(svgLike);
-
-  likeAndDislikeConainer.appendChild(dislikeContainer);
-  dislikeContainer.appendChild(svgdisLike);
-
-  //create line between comments
   let hr = document.createElement('hr');
   hr.classList.add('comment__hr');
 
   //create whole comment section by adding children
-
   userInfo.appendChild(userName);
   userInfo.appendChild(date);
   commentTxtWrapper.appendChild(userInfo);
@@ -202,8 +318,8 @@ function displayComment(obj) {
   imgAndTxtContainer.appendChild(image);
   imgAndTxtContainer.appendChild(commentTxtWrapper);
   comment.appendChild(imgAndTxtContainer);
-  comment.appendChild(likeAndDislikeConainer);
+  comment.appendChild(likeWrapper);
+  comment.appendChild(reactionOnComment(obj.id)[0]);
   commentSection.appendChild(comment);
   commentSection.appendChild(hr);
-  // console.log(comment);
 }

@@ -132,6 +132,7 @@
   padding: 1.6rem;
 }
 .shows__data--row:hover {
+  cursor: pointer;
   background-color: #fafafa;
 }
 .shows__data--row:focus {
