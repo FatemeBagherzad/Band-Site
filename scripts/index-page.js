@@ -8,7 +8,7 @@ function clearChildren(parent) {
   }
 }
 
-const apiKey = 'b30a6a19-fd69-4da0-b200-91a621e0bac7';
+const apiKey = 'e33df6cc-6f6b-46bf-a438-f2c403112b09';
 let commentArr = [];
 
 //Get Comments Function------------------------------
@@ -20,7 +20,7 @@ const getComments = async function () {
       // for (let i = 0; i < result.data.length; i++) {
       //   displayComment(result.data[i]);
       // }
-      for (let i = result.data.length - 1; i > 0; i--) {
+      for (let i = result.data.length - 1; i >= 0; i--) {
         displayComment(result.data[i]);
       }
     })
