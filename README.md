@@ -9,6 +9,7 @@ This project is designed to practice front-end skills such as HTML, CSS, SCSS, a
 Here’s an animated preview of the project:
 
 ![Project Demo](assets/gif/band-site-1.gif)
+
 ![Project Demo](assets/gif/band-site-2.gif)
 
 ## Technologies Used
