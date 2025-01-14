@@ -1,616 +1,350 @@
-@use './partials/fonts' as *;
-@use './partials/variables' as *;
+@use './partials/global' as *;
 @use './partials/mixins' as *;
+@use './partials/typography' as *;
+@use './partials/variables' as *;
 
-//********************
-//reset
-//********************
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-}
-body {
-  font-family: 'Avenir';
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: $txtAndDarkBack;
-  transition: all 0.5s 0.5s ease-in-out;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-ul,
-a {
-  text-decoration: none;
-  list-style: none;
-  color: inherit;
-  padding: 0;
-}
-.container {
-  margin: 0 auto;
-  padding: 0 2.4rem 0 2.4rem;
-  // width: 100vw;
-  max-width: 70rem;
-  @include tablet {
-    max-width: 78rem;
-  }
-  @include desktop {
-    max-width: 128rem;
-  }
-}
-.Background {
-  background-color: $txtAndDarkBack;
-}
-
-hr {
-  border: 1px solid $Lines;
-}
-.activeState {
-  border-bottom: 5px solid $txtAndLightBack;
-  font-weight: 600;
-}
-.sectionHeader {
-  font-size: 2.4rem;
-  font-weight: 600;
-  margin: 8rem 0 4rem 0;
-  width: 100%;
-  color: $txtAndDarkBack;
-  @include tablet {
-    font-size: 3.6rem;
-  }
-}
-//********************
-//header
-//********************
-.BackgroundHeader {
-  background-color: $txtAndDarkBack;
-}
-.header {
-  color: $SecondryLightBack;
-  display: grid;
-  grid-template-areas: 'logo' 'menu';
-  justify-items: center;
-  align-items: center;
-  @include tablet {
-    grid-template-areas: 'logo menu menu menu';
-    justify-items: flex-start;
-    height: 8rem;
-  }
-  @include desktop {
-    grid-template-areas: 'logo menu menu menu . . . ';
-    justify-items: flex-start;
-    height: 8rem;
-  }
-  &__logo {
-    grid-area: logo;
-    font-size: 3.2rem;
-    font-weight: 300;
-    padding-top: 2rem;
-    @include tablet {
-      padding-top: 0;
-    }
-  }
-  &__menu {
-    color: $SecondryLightBack;
-    grid-area: menu;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    justify-items: center;
-    align-items: center;
-    font-size: 1.8rem;
-    @include tablet {
-      width: auto;
-    }
-    &--li {
-      width: 100%;
-      &-item {
-        height: 7.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:hover,
-        &:active {
-          border-bottom: 5px solid $txtAndLightBack;
-          color: $txtAndLightBack;
-          font-weight: 600;
-        }
-      }
-    }
-  }
-}
-
-//********************
-//hero
-//********************
-.heroBio {
-  background-image: linear-gradient(
-      rgba(32, 32, 32, 0.5),
-      rgba(32, 32, 32, 0.5)
-    ),
-    url(../assets/images/hero-bio.jpg);
+.hero {
+  background: linear-gradient($bandsite-black--mod, $bandsite-black--mod),
+    url('../assets/images/hero-bio.jpg');
+  height: 60vw;
+  width: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-.heroWrapper {
-  width: 100%;
-}
-.hero {
-  width: 100vw;
-  height: 50vh;
-  @include deviceLandscape {
-    height: 100vh;
-  }
-  color: $txtAndLightBack;
-  font-size: 3.2rem;
-  font-weight: 600;
   display: flex;
-  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
+  margin: 0 -1rem;
+
   @include tablet {
-    font-size: 6rem;
+    margin: 0 -2.25rem;
   }
-  &_header {
-    width: 100%;
+
+  @include desktop {
+    margin: 0 -7rem;
+  }
+
+  &__title {
+    color: $white;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+
+    @include tablet {
+      padding: 2.25rem;
+    }
+
+    @include desktop {
+      padding: 7rem;
+    }
   }
 }
 
-//********************
-//about Musition
-//********************
-.BackgroundAbout {
-  background-color: $txtAndLightBack;
+.content-body {
+  color: $bandsite-black;
 }
-.aboutMusicion {
-  display: grid;
-  grid-template-areas:
-    'header2 header2'
-    'image image'
-    'imgcaption imgcaption'
-    'header3 header3'
-    'introColumn1 introColumn1';
-  align-items: center;
 
-  @include tablet {
-    grid-template-areas:
-      'header2 header2'
-      'image image'
-      'imgcaption imgcaption'
-      'header3 header3'
-      'introColumn1 introColumn2';
-    padding: 0 10rem 5rem 10rem;
+.about-section {
+  &__title {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    margin: 1.5rem 0 1rem 0;
+    color: $bandsite-black;
+
+    @include tablet {
+      margin: 3rem 0 2.25rem 0;
+    }
+  }
+
+  &__container {
+    @include tablet {
+      margin: 0 4rem;
+    }
   }
 
   &__img {
-    grid-area: image;
+    height: 50vw;
     width: 100%;
-  }
-  &__imgcaption {
-    grid-area: imgcaption;
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.5;
-    padding: 2.4rem 0 4.2rem 0;
-    @include tablet {
-      font-size: 2.4rem;
-    }
-  }
-  &__header3 {
-    grid-area: header3;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 2;
-    @include tablet {
-      font-size: 2.4rem;
-    }
-  }
-  &__intro {
-    grid-area: introColumn1;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 2;
-    padding: 1.6rem 0 2.4rem 0;
-    @include tablet {
-      display: flex;
-      gap: 3rem;
-      font-size: 2rem;
-      font-weight: 500;
-      line-height: 1.5;
-    }
-  }
-}
 
-//********************
-//Gallery
-//********************
-.BackgroundGallery {
-  background-color: $SecondryLightBack;
-}
-.gallery {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  color: $txtAndDarkBack;
-  &__header {
-    justify-self: flex-start;
-  }
-  &__images {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    align-items: center;
-    gap: 2.5rem;
-    padding: 0 0 2.4rem 0;
     @include tablet {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    &--img {
+      height: 40vw;
       width: 100%;
     }
   }
-}
-//********************
-//CommentForm Section
-//********************
-.BackgroundComment {
-  background-color: $txtAndLightBack;
-}
-.commentAndFormSection {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  color: $txtAndDarkBack;
-  width: 100%;
-  &__header {
-    justify-self: flex-start;
+
+  &__quote {
+    margin: 1rem 0 0.5rem 0;
+    width: 100%;
+    height: max-content;
+    text-align: left;
+    color: $bandsite-black;
+
+    @include tablet {
+      margin: 2.25rem 0 1rem 0;
+    }
+
+    @include desktop {
+      width: 80%;
+    }
+  }
+
+  &__quotee {
+    margin: 0;
+    color: $bandsite-black;
+
+    @include tablet {
+      font-size: 1.3125rem;
+    }
+  }
+
+  &__band-name {
+    margin: 1rem 0;
+    color: $bandsite-darkblack;
+
+    @include tablet {
+      margin: 2.25rem 0;
+    }
+  }
+
+  &__paragraph-container {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__paragraph {
+    width: 100%;
+    margin: 1rem 0;
+    color: $bandsite-black;
+
+    @include tablet {
+      margin: 0 0 2.25rem 0;
+      width: 46%;
+    }
   }
 }
-.formSection {
-  display: flex;
-  justify-items: flex-start;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  gap: 2rem;
+
+.gallery {
+  background-color: $alabaster;
+  margin: 0 -1rem;
+
   @include tablet {
-    width: 90%;
+    margin: 0 -2.25rem;
   }
+
   @include desktop {
-    width: 60%;
+    margin: 0 -7rem;
   }
-  @include smallScreen {
+
+  &__title {
+    padding: 1rem 0 0 0;
+    margin: 0 0.5rem;
+    display: flex;
+    color: $bandsite-black;
+
+    @include tablet {
+      margin: 0;
+      padding: 3rem 2.25rem 1.5rem 2.25rem;
+    }
+
+    @include desktop {
+      padding: 2.25rem 7rem;
+    }
+  }
+
+  &__container {
+    @include flex-center;
     flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+
+    @include tablet {
+      padding: 0 2.25rem 2.25rem 2.25rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      padding: 0 7rem 2.25rem 7rem;
+    }
   }
+
   &__img {
-    width: 6rem;
-    border-radius: 50%;
-    color: $txtAndLightBack;
-    align-self: start;
-    margin-top: 2rem;
+    width: 100%;
+    filter: grayscale(100%);
+
+    &:hover {
+      filter: grayscale(0%);
+      transition: 0.5s;
+    }
+
+    @include tablet {
+      width: 31.5%;
+      flex-grow: 1;
+    }
+
+    @include desktop {
+      width: 32%;
+    }
   }
+}
+
+.join {
+  &__title-container {
+    padding: 1rem 0 0.5rem;
+
+    @include tablet {
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    @include desktop {
+      padding: 3rem 0 2rem;
+    }
+  }
+
+  &__title {
+    color: $bandsite-black;
+  }
+}
+
+.comments {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  border-bottom: 0.0625rem solid $mercury;
+  padding-bottom: 1rem;
+
+  &__top-container {
+    padding-bottom: 1rem;
+
+    @include tablet {
+      margin: 0 3rem;
+      padding-bottom: 2rem;
+    }
+
+    @include desktop {
+      margin: 0 16rem;
+    }
+  }
+
+  &__img {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    position: relative;
+    top: 1.3rem;
+    aspect-ratio: auto;
+
+    @include tablet {
+      top: 2rem;
+    }
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__label {
+    border-radius: 0.25rem;
+    color: $silver;
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
     width: 100%;
-    gap: 0.5rem;
-    font-size: 1rem;
-    @include tablet {
-      font-size: 1.2rem;
-    }
-    &--label {
-      color: $Lines;
-      font-weight: 600;
-    }
-    &--input {
-      width: 100%;
-      padding: 1.2rem;
-      margin-bottom: 3rem;
-      background-color: $SecondryLightBack;
-      border: 2px solid $Lines;
-      border-radius: 4px;
-      font-family: inherit;
+  }
 
-      &:hover,
-      &:active {
-        border: 2px solid $txtAndDarkBack;
-      }
-    }
-    &--textArea {
-      height: 15rem;
-    }
-    &--btn {
-      background-color: $txtAndDarkBack;
-      color: $txtAndLightBack;
-      width: 100%;
-      padding: 1.2rem 5rem;
-      border-radius: 4px;
-      margin-bottom: 2rem;
-      font-size: 1rem;
-      &:hover {
-        cursor: pointer;
-        font-weight: 600;
-      }
-      @include tablet {
-        font-size: 1.2rem;
-        width: auto;
-        align-self: flex-end;
-      }
-    }
+  &__name-input {
+    @include form-input;
+    resize: none;
   }
-}
 
-//********************
-//Comment Section
-//********************
-.commentSection {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  color: $txtAndDarkBack;
-  width: 100%;
-  @include tablet {
-    width: 90%;
+  &__text-input {
+    @include form-input;
+    resize: none;
   }
-  @include desktop {
-    width: 60%;
-  }
-  &__header {
-    width: 100%;
-    justify-self: flex-start;
-  }
-}
-.comment {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  color: $txtAndDarkBack;
-  width: 100%;
-  margin: auto;
-  // gap: 1rem;
-  font-size: 1.8rem;
-  line-height: 2;
-  @include tablet {
-    font-size: 2.2rem;
-    line-height: 1.5;
-  }
-  @include smallScreen {
-    flex-direction: column;
-  }
-  &__imgTxtContainer {
-    display: flex;
-    gap: 2rem;
-    margin: auto;
-    width: 100%;
-  }
-  &__hr {
-    margin: 0 0 3rem 0;
-    width: 100%;
-  }
-  &__img {
-    background-color: $Lines;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    align-self: flex-start;
-  }
-  &__TxtWrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    &--userInfo {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      margin-bottom: 1.6rem;
-      &-date {
-        color: $Lines;
-      }
-      &--p {
-        font-weight: 500;
-      }
-    }
-  }
-  &__likeCounter {
-    align-self: start;
-    margin-top: 2rem;
-    font-size: 2rem;
-    color: $SecondryTxt;
-    &-heart {
-      opacity: 0.3;
-    }
-  }
-  &__commentIcons {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    width: 100%;
-    border-top: 0.3rem solid $Lines;
-    font-size: 1.8rem;
-    letter-spacing: 0.1rem;
-    font-weight: 600;
-    color: $SecondryTxt;
-    @include tablet {
-      padding: 0 1rem 0 2rem;
-    }
-    &-wrapper {
-      display: flex;
-      align-items: center;
-      padding: 0.7rem 0.5rem;
-      @include tablet {
-        padding: 0.7rem 2rem;
-      }
-      border-radius: 0.5rem;
-      &:hover {
-        cursor: pointer;
-        background-color: $Lines;
-      }
-    }
-    &-icon {
-      width: 4rem;
-      margin-right: 0.7rem;
-    }
-  }
-  &__more {
-    font-size: 1.5;
-    color: $SecondryTxt;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    width: 20rem;
-    height: 18rem;
-    padding: 2rem 1rem;
-    background-color: $txtAndLightBack;
-    border: 1px solid $SecondryTxt;
-    border-radius: 1rem;
-    position: absolute;
-    bottom: 5rem;
-    right: 0;
-    box-shadow: 0px 0.5rem 1rem 0px rgba(62, 62, 62, 0.2);
-    z-index: 999;
 
-    &-item {
-      display: flex;
-      align-items: center;
-      padding: 0.5rem 0.2rem;
-      border-radius: 0.5rem;
-      &:hover {
-        cursor: pointer;
-        background-color: $Lines;
-      }
-    }
-  }
-}
-#repostm {
-  display: none;
-  @include tablet {
-    display: flex;
-  }
-}
-#repost {
-  @include tablet {
-    display: none;
-  }
-}
-.actOnComment {
-  display: none;
-}
-//********************
-//Footer
-//********************
-.BackgroundFooter {
-  background-color: $txtAndDarkBack;
-}
-.footer {
-  display: grid;
-  grid-template-areas:
-    'getInTouch'
-    'hr1'
-    'agent'
-    'hr2'
-    'logo'
-    'hr3'
-    'copyRight';
-  align-items: center;
-  color: $txtAndLightBack;
-  padding: 5rem 2rem;
-  @include tablet {
-    grid-template-areas:
-      'getInTouch getInTouch logo'
-      'hr1 hr1 hr1 '
-      'agent agent agent'
-      'hr3 hr3 hr3'
-      'copyRight  copyRight copyRight';
-  }
-  &__social {
-    grid-area: getInTouch;
-    font-size: 2.4rem;
-    font-weight: 600;
+  &__btn-container {
     @include tablet {
-      font-size: 3.6rem;
-      display: flex;
-      justify-content: flex-start;
-      align-content: center;
-      gap: 4rem;
-    }
-    &--icons {
-      display: flex;
-      align-content: center;
-      gap: 4rem;
-      &-icon {
-        height: 3rem;
-      }
-    }
-  }
-  &__hr1 {
-    grid-area: hr1;
-  }
-  &__agents {
-    grid-area: agent;
-    line-height: 1.5;
-    margin: 3rem 0;
-    @include tablet {
-      display: flex;
-      gap: 4rem;
-    }
-    &--agent {
-      font-size: 1.3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem 0;
-      &-name {
-        font-weight: 600;
-        font-size: 1.3rem;
-      }
-    }
-  }
-  &__hr2 {
-    grid-area: hr2;
-    @include tablet {
-      display: none;
-    }
-  }
-  &__logo {
-    grid-area: logo;
-    font-size: 1.4rem;
-    padding: 1rem 0;
-    @include tablet {
-      font-size: 2.4rem;
       display: flex;
       justify-content: flex-end;
+      align-items: flex-end;
     }
   }
-  &__hr3 {
-    grid-area: hr3;
+
+  &__btn {
+    @include btn;
+    &:hover {
+      background-color: $bandsite-darkblack;
+    }
+
+    @include tablet {
+      width: 9.375rem;
+    }
   }
-  &__copyRight {
-    grid-area: copyRight;
+}
+
+.posted-comments {
+  &__section {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__container {
     padding: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+    border-bottom: 0.0625rem solid $mercury;
+    width: 100%;
+  }
+
+  &__img-container {
+    min-width: 2.25rem;
+    max-height: 2.25rem;
+    border-radius: 50%;
+    background-color: $mercury;
+    text-align: center;
+    font-size: 1px;
+    color: $mercury;
+  }
+
+  &__img {
+    aspect-ratio: auto;
+  }
+
+  &__content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  &__title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__name {
+    color: $bandsite-black;
+  }
+
+  &__date {
+    color: $silver;
   }
 }

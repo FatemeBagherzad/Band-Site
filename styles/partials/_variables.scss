@@ -1,16 +1,19 @@
-$tablet-width: 768px;
-$desktop-width: 1280px;
-$small-width: 400px;
-$landscape-narrowHeight-width: 950px;
+// Screen breakpoints
+$tablet: 768px;
+$desktop: 1280px;
 
-//********************
-//colors
-//********************
-//*****Primary*****
-$txtAndLightBack: #ffffff;
-$SecondryTxt: #afafaf;
-$txtAndDarkBack: #323232;
-//*****Secondry****
-$SecondryLightBack: #fafafa;
-$Lines: #e1e1e1;
-$CTAHover: #000000;
+// Font weights
+$regular: 400;
+$demi: 600;
+$bold: 700;
+
+// Primary colours
+$bandsite-black: #323232;
+$silver: #afafaf;
+$white: #ffffff;
+
+// Secondary colours
+$bandsite-darkblack: #000000;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;
+$bandsite-black--mod: #32323280;
