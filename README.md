@@ -1,8 +1,8 @@
-# BandSite Project
+# BandSite
 
 ## Project Overview
 
-This project is designed to practice front-end skills such as HTML, CSS, SCSS, and JavaScript by fetching data from an external API and displaying it in an organized, user-friendly interface.
+This project demonstrates front-end development skills using HTML, CSS, SCSS, and JavaScript by integrating data from an external API and presenting it in a structured, user-friendly interface.
 
 ## Animated Demo
 
